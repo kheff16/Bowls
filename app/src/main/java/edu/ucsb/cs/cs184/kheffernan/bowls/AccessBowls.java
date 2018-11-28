@@ -169,6 +169,7 @@ public class AccessBowls extends BaseActivity implements
         // [END send_email_verification]
     }
 
+
     private boolean validateForm() {
         boolean valid = true;
 
@@ -179,6 +180,8 @@ public class AccessBowls extends BaseActivity implements
         } else {
             mEmailField.setError(null);
         }
+
+  
 
         String password = mPasswordField.getText().toString();
         if (TextUtils.isEmpty(password)) {
@@ -210,6 +213,7 @@ public class AccessBowls extends BaseActivity implements
             findViewById(R.id.emailPasswordButtons).setVisibility(View.VISIBLE);
             findViewById(R.id.emailPasswordFields).setVisibility(View.VISIBLE);
             findViewById(R.id.signedInButtons).setVisibility(View.GONE);
+ 
         }
     }
 
