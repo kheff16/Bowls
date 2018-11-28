@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/title_bottom_margin"
-            android:text="@string/emailpassword_title_text"
+            android:text="Mobile Ordering"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:theme="@style/ThemeOverlay.MyTitleText" />
 
@@ -41,6 +41,18 @@
             android:id="@+id/detail"
             style="@style/ThemeOverlay.MyTextDetail"
             tools:text="Firebase User ID: 123456789abc" />
+
+        <Button
+            android:id="@+id/mobileOrderActivityButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place a Mobile Order" />
+
+        <Button
+            android:id="@+id/configureAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configure My Account" />
 
     </LinearLayout>
 

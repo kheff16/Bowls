@@ -205,6 +205,9 @@ public class AccessBowls extends BaseActivity implements
             findViewById(R.id.emailPasswordFields).setVisibility(View.GONE);
             findViewById(R.id.signedInButtons).setVisibility(View.VISIBLE);
 
+            findViewById(R.id.mobileOrderActivityButton).setVisibility(View.VISIBLE);
+            findViewById(R.id.configureAccountButton).setVisibility(View.VISIBLE);
+
             findViewById(R.id.verifyEmailButton).setEnabled(!user.isEmailVerified());
         } else {
             mStatusTextView.setText(R.string.signed_out);
@@ -213,6 +216,9 @@ public class AccessBowls extends BaseActivity implements
             findViewById(R.id.emailPasswordButtons).setVisibility(View.VISIBLE);
             findViewById(R.id.emailPasswordFields).setVisibility(View.VISIBLE);
             findViewById(R.id.signedInButtons).setVisibility(View.GONE);
+
+            findViewById(R.id.mobileOrderActivityButton).setVisibility(View.GONE);
+            findViewById(R.id.configureAccountButton).setVisibility(View.GONE);
  
         }
     }

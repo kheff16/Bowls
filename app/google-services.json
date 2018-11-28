@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "118258843341",
+    "firebase_url": "https://bowls-398c8.firebaseio.com",
+    "project_id": "bowls-398c8",
+    "storage_bucket": "bowls-398c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118258843341:android:143928f594c91bb0",
+        "android_client_info": {
+          "package_name": "edu.ucsb.cs.cs184.kheffernan.bowls"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118258843341-o6be0i5outk40qvncu53fr9skr8a9lkk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.ucsb.cs.cs184.kheffernan.bowls",
+            "certificate_hash": "4078b089c489d469d5af4a0be74c53a1636deed4"
+          }
+        },
+        {
+          "client_id": "118258843341-b5028gct1jgm98th4j4nps5q5msnlkk8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvSzOFe1BOIEI2pQQWFmNoKZQvrIrFHFU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118258843341-b5028gct1jgm98th4j4nps5q5msnlkk8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
