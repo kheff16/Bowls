@@ -12,4 +12,51 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="bowl">bowl</string>
+    <string name="salad">salad</string>
+    <string name="soup">soup</string>
+    <string name="bread">bread</string>
+    <string name="drink">drink</string>
+    <string name="checkout">cart</string>
+    <string name="chooseItem">Choose An Item</string>
+    <string name="store_name">Buddha Bowls</string>
+
+    <string name="chooseSauce">Choose Your Sauce</string>
+    <string name="sauce1">sauce1</string>
+    <string name="sauce2">sauce2</string>
+    <string name="sauce3">sauce3</string>
+    <string name="sauce4">sauce4</string>
+    <string name="sauce5">sauce5</string>
+
+    <string name="chooseMeat">Choose Your Meat</string>
+    <string name="meat1">meat1</string>
+    <string name="meat2">meat2</string>
+    <string name="meat3">meat3</string>
+    <string name="meat4">meat4</string>
+    <string name="meat5">meat5</string>
+
+    <string name="chooseVegetable">Choose Your Vegetable</string>
+    <string name="vegetable1">vegetabe1</string>
+    <string name="vegetable2">vegetable2</string>
+    <string name="vegetable3">vegetable3</string>
+    <string name="vegetable4">vegetable4</string>
+    <string name="vegetable5">vegetable5</string>
+
+    <string name="chooseCheese">Choose Your Cheese</string>
+    <string name="cheese1">cheese1</string>
+    <string name="cheese2">cheese2</string>
+    <string name="cheese3">cheese3</string>
+    <string name="cheese4">cheese4</string>
+    <string name="cheese5">cheese5</string>
+
+    <string name="chooseExtras">Choose Your Extras</string>
+    <string name="extras1">extras1</string>
+    <string name="extras2">extras2</string>
+    <string name="extras3">extras3</string>
+    <string name="extras4">extras4</string>
+    <string name="extras5">extras5</string>
+
+
+
+
 </resources>
