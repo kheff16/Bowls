@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class AccessBowls extends BaseActivity implements
         View.OnClickListener {
 
-    private static final String TAG = "EmailPassword";
+    private static final String TAG = "AccessBowlsActivity";
 
     private TextView mStatusTextView;
     private TextView mDetailTextView;
