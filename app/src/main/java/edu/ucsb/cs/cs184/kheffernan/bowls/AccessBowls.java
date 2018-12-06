@@ -1,5 +1,6 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
@@ -197,6 +198,7 @@ public class AccessBowls extends BaseActivity implements
     private void updateUI(FirebaseUser user) {
         hideProgressDialog();
         if (user != null) {
+
             mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
                     user.getEmail(), user.isEmailVerified()));
             mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
@@ -235,5 +237,10 @@ public class AccessBowls extends BaseActivity implements
         } else if (i == R.id.verifyEmailButton) {
             sendEmailVerification();
         }
+    }
+
+    public void goToAccountSettingsActivity(){
+        Intent i = new Intent(this, AccountSettingsActivity.class);
+        startActivity(i);
     }
 }
