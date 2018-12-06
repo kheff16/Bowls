@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -48,8 +49,9 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
         setContentView(R.layout.activity_home_page);
 
         currentUserText = (TextView) findViewById(R.id.current_user_id);
-        btnAddToDatabase = (Button) findViewById(R.id.btn_create_order);
         mDrawerLayout = findViewById(R.id.drawer_layout);
+
+        setNavigationViewListner();
 
 
 
@@ -60,24 +62,28 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
 
 
 
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 final FirebaseUser userFirebase = firebaseAuth.getCurrentUser();
                 if (userFirebase != null) {
                     // User is signed in - do nothing, stay in main view
-                    currentUserText.setText("Email: " +userFirebase.getEmail() + "\nFirebase User: "+userFirebase.getUid());
+                    currentUserText.setText("Your information:\nEmail: " +userFirebase.getEmail()
+                                    + "\nFirebase User Uid: "+userFirebase.getUid());
+
 
                     bowlsFirebase.getBowlsUser(userFirebase.getUid(), new BowlsFirebaseCallback<BowlsUser>() {
                         @Override
                         public void callback(BowlsUser data) {
                             if(data != null) {
                                 user = data;
+                                currentUserText.setText("bowlsFirebase.getBowlsUser: \nFullname = " +user.getFullname());
 
                             }
                         }
                     });
+
+
 
 
                 } else {
@@ -114,12 +120,16 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
         Order newOrder = new Order("first order ever", bowlsAuth.getCurrentUser().getUid(), "address here", 12.99);
         bowlsFirebase.createNewOrder(newOrder);
 
+    }
 
+    public void logOutBtnClicked(View view){
+        bowlsAuth.signOut();
     }
 
 
-    public void viewProfileButtonClicked(){
-
+    public void viewProfileButtonClicked() {
+        Intent i = new Intent(this, ProfilePage.class);
+        startActivity(i);
     }
 
     public void menuButtonClicked(View view) {
@@ -131,27 +141,51 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
         // Handle navigation view item clicks here.
         switch (item.getItemId()) {
 
-            case R.id.profile_page_button: {
+            case R.id.profile_page_btn: {
                 viewProfileButtonClicked();
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "profile page button clicked!",
+                        Toast.LENGTH_SHORT);
+
+                toast.show();
                 break;
             }
 
-            case R.id.logout_button: {
+            case R.id.logout_btn: {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Log out button clicked!",
+                        Toast.LENGTH_SHORT);
+
+                toast.show();
                 bowlsAuth.signOut();
                 break;
             }
 
-            case R.id.create_spot_entry_button: {
+            case R.id.my_orders_btn: {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "My orders button clicked!",
+                        Toast.LENGTH_SHORT);
+
+                toast.show();
+                break;
+            }
+
+            case R.id.view_menu_btn: {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "View Menu button clicked!",
+                        Toast.LENGTH_SHORT);
+
+                toast.show();
 
                 break;
             }
 
-            case R.id.option_get_place: {
+            case R.id.create_order_btn: {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Create Order Button clicked!",
+                        Toast.LENGTH_SHORT);
 
-                break;
-            }
-
-            case R.id.my_parking_spots_button: {
+                toast.show();
 
             }
 

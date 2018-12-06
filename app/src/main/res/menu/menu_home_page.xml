@@ -4,25 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <item android:id="@+id/profile_page_button"
+    <item android:id="@+id/profile_page_btn"
         android:title="My Profile"
         />
 
-    <item android:id="@+id/my_parking_spots_button"
+    <item android:id="@+id/my_orders_btn"
         android:title="My Orders"
         />
 
     <item
-        android:id="@+id/create_spot_entry_button"
+        android:id="@+id/create_order_btn"
         android:title="Create an Order"
         android:titleCondensed="Add Order"
         />
 
-    <item android:id="@+id/option_get_place"
+    <item android:id="@+id/view_menu_btn"
         android:title="About"
         />
 
-    <item android:id="@+id/logout_button"
+    <item android:id="@+id/logout_btn"
         android:title="Logout"
         />
 

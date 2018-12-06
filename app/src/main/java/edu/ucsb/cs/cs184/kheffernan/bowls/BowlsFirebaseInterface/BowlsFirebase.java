@@ -193,30 +193,6 @@ public class BowlsFirebase {
         });
     }
 
-//    public void getPastOrders(
-//            final BowlsUser user,
-//            @NonNull final BowlsFirebaseCallback<Map<Order, BlockedDates>> finishedCallback) {
-//
-//        final Map<Order, BlockedDates> ordersAndBlocks = new HashMap<>();
-//
-//        final Map<String, String> rentedorders = user.getRentedorders();
-//
-//        for (final String key : rentedorders.keySet()) {
-//            getOrder(rentedorders.get(key), new BowlsFirebaseCallback<Order>() {
-//                @Override
-//                public void callback(Order data) {
-//                    if(data != null) {
-//                        ordersAndBlocks.put(data, new BlockedDates(key));
-//                    }
-//
-//                    if(ordersAndBlocks.size() == rentedorders.size()) {
-//                        finishedCallback.callback(ordersAndBlocks);
-//                    }
-//                }
-//            });
-//        }
-//    }
-
     /**
      *
      * MARK - BowlsUser Interface

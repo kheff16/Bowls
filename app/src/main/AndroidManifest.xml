@@ -35,6 +35,8 @@
             android:label="Register" />
         <activity android:name=".AccessBowls"
             android:label="AccessRegister" />
+        <activity android:name=".ProfilePage"
+            android:label="Profile" />
 
     </application>
 
