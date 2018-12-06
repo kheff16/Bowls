@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <item android:id="@+id/profile_page_button"
+        android:title="My Profile"
+        />
+
+    <item android:id="@+id/my_parking_spots_button"
+        android:title="My Orders"
+        />
+
+    <item
+        android:id="@+id/create_spot_entry_button"
+        android:title="Create an Order"
+        android:titleCondensed="Add Order"
+        />
+
+    <item android:id="@+id/option_get_place"
+        android:title="About"
+        />
+
+    <item android:id="@+id/logout_button"
+        android:title="Logout"
+        />
+
+</menu>

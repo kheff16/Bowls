@@ -17,6 +17,10 @@ public class BowlsFirebaseAuth {
         return bowlsAuth.signInWithEmailAndPassword(email, password);
     }
 
+    public void signOut(){
+        bowlsAuth.signOut();
+    }
+
     public Task<AuthResult> register(String email, String password) {
         return bowlsAuth.createUserWithEmailAndPassword(email, password);
     }
@@ -32,5 +36,6 @@ public class BowlsFirebaseAuth {
     public FirebaseUser getCurrentUser() {
         return bowlsAuth.getCurrentUser();
     }
+
 
 }

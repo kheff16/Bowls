@@ -40,12 +40,12 @@ public class BowlsFirebase {
 
 
     // Create a new parking order in the database
-    public String createNeworder(Order order) {
-        String neworderID = "order-" + UUID.randomUUID().toString();
+    public String createNewOrder(Order order) {
+        String newOrderID = "order-" + UUID.randomUUID().toString();
 
-        bowlsDatabase.child(ORDER_PATH).child(neworderID).setValue(order);
+        bowlsDatabase.child(ORDER_PATH).child(newOrderID).setValue(order);
 
-        return neworderID;
+        return newOrderID;
     }
 
     // Update a current parking order from the data base

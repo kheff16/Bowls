@@ -10,28 +10,27 @@ public class BowlsUser {
         private String userID;
         private String email;
         private String fullname;
-        private String location;
-        private String imageUrl;
-        private Map<String, String> rentedSpots = new HashMap<>();
+        private String accountType;
+        private Map<String, String> currentOrders = new HashMap<>();
 
 
         public BowlsUser() {
             // Default no argument constructor needed for Firebase database
         }
 
-        public BowlsUser(String userID, String email, String fullname, String location) {
+        public BowlsUser(String userID, String email, String fullname, String accountType) {
             this.userID = userID;
             this.email = email;
             this.fullname = fullname;
-            this.location = location;
+            this.accountType = accountType;
         }
 
-        public void addRentedSpot(String blockedDates, String spotID) {
-            rentedSpots.put(blockedDates, spotID);
+        public void addOrderToUser( String orderID) {
+            currentOrders.put(orderID, userID);
         }
 
-        public void removeRentedSpot(String blockedDates) {
-            rentedSpots.remove(blockedDates);
+        public void removeOrderFromUser(String orderID) {
+            currentOrders.remove(orderID);
         }
 
         public String getUserID() {
@@ -46,11 +45,10 @@ public class BowlsUser {
             return this.fullname;
         }
 
-        public String getLocation() { return this.location; }
+        public String getAccountType() { return this.accountType; }
 
-        public String getImageUrl() { return this.imageUrl; }
 
-        public Map<String, String> getRentedSpots() { return this.rentedSpots; }
+        public Map<String, String> getCurrentOrder() { return this.currentOrders; }
 
         public void setUserID(String userID) { this.userID = userID; }
 
@@ -58,11 +56,9 @@ public class BowlsUser {
 
         public void setFullname(String fullname) { this.fullname = fullname; }
 
-        public void setLocation(String location) { this.location = location; }
+        public void setLocation(String accountType) { this.accountType = accountType; }
 
-        public void setImageUrl(String url) { this.imageUrl = url; }
-
-        public void setRentedSpots(Map<String, String> rentedSpots) { this.rentedSpots = rentedSpots; }
+        public void setCurrentOrders(Map<String, String> currentOrders) { this.currentOrders = currentOrders; }
 }
 
 
