@@ -27,4 +27,9 @@ public class BowlsConstants {
     public static final String ORDER_PATH = "orders";
     public static final String USER_PATH = "users";
 
+    //User object constants
+    public static final String ACCOUNT_TYPE_CUSTOMER = "customer";
+    public static final String ACCOUNT_TYPE_BUSINESS = "manager";
+
+
 }
