@@ -26,6 +26,7 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_PATH;
+import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_COMPLETED;
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.USER_PATH;
 
 public class BowlsFirebase {
@@ -192,6 +193,40 @@ public class BowlsFirebase {
 
         });
     }
+
+    public void getUsersCompletedOrders(final String userID,
+                               @NonNull final BowlsFirebaseCallback<ArrayList<Order>> finishedCalback) {
+
+        DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Order> completedOrders = new ArrayList<>();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Order order = postSnapshot.getValue(Order.class);
+
+                    if (order != null) {
+                        order.setOrderID(postSnapshot.getKey());
+                        if (order.getOrderStatus() == ORDER_STATUS_COMPLETED) {
+                            completedOrders.add(order);
+
+                        }
+                    }
+
+                }
+
+                finishedCalback.callback(completedOrders);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+
+        });
+    }
+
+
+
+
 
     /**
      *

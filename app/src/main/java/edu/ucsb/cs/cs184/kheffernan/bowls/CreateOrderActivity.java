@@ -76,7 +76,7 @@ public class CreateOrderActivity extends AppCompatActivity {
                             "Creating order...", true, true);
 
 
-                    Order newOrder = new Order(user.getUid(), str.toString(), 4.20);
+                    Order newOrder = new Order(user.getUid(), user.getUid(), str.toString(), 4.20);
 
                     bowlsFirebase.createNewOrder(newOrder);
                 }

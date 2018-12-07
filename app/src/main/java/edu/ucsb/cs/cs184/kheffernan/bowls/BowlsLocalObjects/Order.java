@@ -11,6 +11,7 @@ public class Order {
     private String ownerID;
     private Double orderCost;
     private String orderStatus;
+    private String items;
 
     public Order() {
         // Required no argument constructor for Firebase database
@@ -23,11 +24,12 @@ public class Order {
         this.orderStatus = ORDER_STATUS_CREATED;
     }
 
-    public Order(String orderID, String ownerID, Double orderCost) {
+    public Order(String orderID, String ownerID, String items, Double orderCost) {
         this.orderID = orderID;
         this.ownerID = ownerID;
         this.orderCost = orderCost;
         this.orderStatus = ORDER_STATUS_CREATED;
+        this.items = items;
     }
 
     public String formattedOrderCost() {
@@ -46,11 +48,15 @@ public class Order {
         return this.orderCost;
     }
 
+    public String getItems(){return this.items;}
+
     public String getOrderStatus(){return this.orderStatus;}
 
     public void setOrderID(String orderID) { this.orderID = orderID; }
 
     public void setOwnerID(String ownerID) { this.ownerID = ownerID; }
+
+    public void setItems(String items) { this.items = items; }
 
     public void setOrderCost(Double orderCost) {
         this.orderCost = orderCost;
