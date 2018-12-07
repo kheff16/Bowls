@@ -1,5 +1,6 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -7,18 +8,33 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebase;
+import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseAuth;
+import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.MenuItem;
+import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 import edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.MenuItemAdapter;
 
 public class CreateOrderActivity extends AppCompatActivity {
 
+    //UI Vars
     private ListView listView;
-    private Button button;
+    private Button submitOrderButton;
+
+    //Firebase Vars
+    private BowlsFirebaseAuth bowlsAuth;
+    private BowlsFirebase bowlsFirebase;
+
+    //Local Object Vars
+    private BowlsUser bowlsUser;
+
 
     private HashSet<String> menuItemHashSet = new HashSet<>();
     private List<MenuItem> menuItemLinkedList = new LinkedList<>();
@@ -31,7 +47,10 @@ public class CreateOrderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_create_order);
 
         listView = (ListView)findViewById(R.id.list_view);
-        button = (Button)findViewById(R.id.button);
+        submitOrderButton = (Button)findViewById(R.id.submit_order_btn);
+
+        bowlsAuth = new BowlsFirebaseAuth();
+        bowlsFirebase = new BowlsFirebase();
 
 
         for (int i=0; i < 10; i++) {
@@ -40,7 +59,7 @@ public class CreateOrderActivity extends AppCompatActivity {
 
         getData();
 
-        button.setOnClickListener(new View.OnClickListener() {
+        submitOrderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 selectdmenuItem = adapter.getSelectedMenuItem();
@@ -50,7 +69,16 @@ public class CreateOrderActivity extends AppCompatActivity {
                     while (iterator.hasNext()){
                         str.append(iterator.next().toString());
                     }
+
                     Toast.makeText(CreateOrderActivity.this, str, Toast.LENGTH_SHORT).show();
+                    FirebaseUser user = bowlsAuth.getCurrentUser();
+                    final ProgressDialog dialog = ProgressDialog.show(CreateOrderActivity.this, "",
+                            "Creating order...", true, true);
+
+
+                    Order newOrder = new Order(user.getUid(), str.toString(), 4.20);
+
+                    bowlsFirebase.createNewOrder(newOrder);
                 }
             }
         });
