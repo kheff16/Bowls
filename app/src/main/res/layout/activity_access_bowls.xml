@@ -21,14 +21,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_firebase_lockup"
-            android:src="@drawable/ic_launcher_foreground" />
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/title_bottom_margin"
-            android:text="Mobile Ordering"
+            android:text="Create Account"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:theme="@style/ThemeOverlay.MyTitleText" />
 
