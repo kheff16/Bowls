@@ -76,8 +76,10 @@ public class EditProfile extends AppCompatActivity {
     public void confirm(View view) {
         //Change user's screen name, profile pic, and location in firebase
         String rawNewName = editName.getText().toString();
+        boolean rawNewAccountType = editAcctTypeSwitch.isChecked();
 
         boolean newNameSet = false;
+        boolean newAcctTypeSet = false;
 
 
         if (((rawNewName.length()) > 0) && (rawNewName != user.getFullname())) {
@@ -86,7 +88,14 @@ public class EditProfile extends AppCompatActivity {
             bowlsFirebase.uploadUser(user);
         }
 
-        if(newNameSet) {
+        //if account is toggled to Business and user's account type is not previously set to business
+        if (rawNewAccountType && (user.getAccountType()!=ACCOUNT_TYPE_BUSINESS)){
+            newAcctTypeSet = true;
+            user.setAccountType(ACCOUNT_TYPE_BUSINESS);
+            bowlsFirebase.uploadUser(user);
+        }
+
+        if(newNameSet||newAcctTypeSet) {
             setResult(PROFILE_EDITED); }
             finish();
         }
