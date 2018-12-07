@@ -278,7 +278,8 @@ public class RegisterActivity extends AppCompatActivity implements LoaderManager
                                         currentUser.getUid(),
                                         currentUser.getEmail(),
                                         fullName,
-                                        "dummy location"
+                                        "customer",
+                                        "1234567890"
                                 );
 
                                 bowlsFirebase.uploadUser(newRegisteredUser);

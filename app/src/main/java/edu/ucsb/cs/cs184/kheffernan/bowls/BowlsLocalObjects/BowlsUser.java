@@ -10,6 +10,7 @@ public class BowlsUser {
         private String userID;
         private String email;
         private String fullname;
+        private String phoneNumber;
         private String accountType;
         private Map<String, String> currentOrders = new HashMap<>();
 
@@ -18,11 +19,12 @@ public class BowlsUser {
             // Default no argument constructor needed for Firebase database
         }
 
-        public BowlsUser(String userID, String email, String fullname, String accountType) {
+        public BowlsUser(String userID, String email, String fullname, String accountType, String phoneNumber) {
             this.userID = userID;
             this.email = email;
             this.fullname = fullname;
             this.accountType = accountType;
+            this.phoneNumber = phoneNumber;
         }
 
         public void addOrderToUser( String orderID) {
@@ -47,6 +49,8 @@ public class BowlsUser {
 
         public String getAccountType() { return this.accountType; }
 
+        public String getPhoneNumber() {return this.phoneNumber;}
+
 
         public Map<String, String> getCurrentOrder() { return this.currentOrders; }
 
@@ -56,7 +60,9 @@ public class BowlsUser {
 
         public void setFullname(String fullname) { this.fullname = fullname; }
 
-        public void setLocation(String accountType) { this.accountType = accountType; }
+        public void setAccountType(String accountType) { this.accountType = accountType; }
+
+        public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
 
         public void setCurrentOrders(Map<String, String> currentOrders) { this.currentOrders = currentOrders; }
 }

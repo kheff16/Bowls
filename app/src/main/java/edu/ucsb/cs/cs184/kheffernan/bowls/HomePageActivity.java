@@ -116,8 +116,9 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
         startActivity(i);
     }
 
-    public void createAnOrderBtnClicked(View view){
-        Order newOrder = new Order("first order ever", bowlsAuth.getCurrentUser().getUid(), "address here", 12.99);
+    public void createOrderBtnClicked(){
+        FirebaseUser user = bowlsAuth.getCurrentUser();
+        Order newOrder = new Order(user.getUid(), user.getUid(), 4.20);
         bowlsFirebase.createNewOrder(newOrder);
 
     }
@@ -181,6 +182,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
             }
 
             case R.id.create_order_btn: {
+                createOrderBtnClicked();
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Create Order Button clicked!",
                         Toast.LENGTH_SHORT);

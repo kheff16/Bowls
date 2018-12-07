@@ -31,5 +31,11 @@ public class BowlsConstants {
     public static final String ACCOUNT_TYPE_CUSTOMER = "customer";
     public static final String ACCOUNT_TYPE_BUSINESS = "manager";
 
+    //Order Status
+    public static final String ORDER_STATUS_CREATED = "created";
+    public static final String ORDER_STATUS_IN_PROGRESS = "in-progress";
+    public static final String ORDER_STATUS_READY_FOR_PICK_UP = "ready for pickup";
+    public static final String ORDER_STATUS_COMPLETED = "completed";
+
 
 }
