@@ -45,6 +45,7 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
         bowlsFirebaseAuth = new BowlsFirebaseAuth();
         currentUser = bowlsFirebaseAuth.getCurrentUser();
 
+        //will implement on item click later
 //        pastOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
