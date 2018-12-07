@@ -39,6 +39,8 @@
             android:label="Profile" />
         <activity android:name=".EditProfile"
             android:label="Edit Profile"/>
+        <activity android:name=".CreateOrderActivity"
+            android:label="Create an Order"/>
 
     </application>
 

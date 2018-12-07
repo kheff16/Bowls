@@ -59,7 +59,11 @@ public class EditProfile extends AppCompatActivity {
                         public void run() {
 
                             editName.setHint(user.getFullname());
-                            editAcctTypeSwitch.setChecked(user.getAccountType()== ACCOUNT_TYPE_BUSINESS);
+
+                            if (user.getAccountType()==ACCOUNT_TYPE_BUSINESS){
+                                editAcctTypeSwitch.setChecked(true);
+                            }
+                            else {editAcctTypeSwitch.setChecked(false);}
 
                         }
                     });
@@ -78,6 +82,10 @@ public class EditProfile extends AppCompatActivity {
         String rawNewName = editName.getText().toString();
         boolean rawNewAccountType = editAcctTypeSwitch.isChecked();
 
+        String rawNewAccount;
+        if (editAcctTypeSwitch.isChecked()){rawNewAccount=ACCOUNT_TYPE_BUSINESS;}
+        else{rawNewAccount=ACCOUNT_TYPE_CUSTOMER;}
+
         boolean newNameSet = false;
         boolean newAcctTypeSet = false;
 
@@ -89,9 +97,9 @@ public class EditProfile extends AppCompatActivity {
         }
 
         //if account is toggled to Business and user's account type is not previously set to business
-        if (rawNewAccountType && (user.getAccountType()!=ACCOUNT_TYPE_BUSINESS)){
+        if (rawNewAccount != user.getAccountType()){
             newAcctTypeSet = true;
-            user.setAccountType(ACCOUNT_TYPE_BUSINESS);
+            user.setAccountType(rawNewAccount);
             bowlsFirebase.uploadUser(user);
         }
 

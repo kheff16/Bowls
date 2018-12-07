@@ -117,9 +117,12 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
     }
 
     public void createOrderBtnClicked(){
-        FirebaseUser user = bowlsAuth.getCurrentUser();
-        Order newOrder = new Order(user.getUid(), user.getUid(), 4.20);
-        bowlsFirebase.createNewOrder(newOrder);
+//        FirebaseUser user = bowlsAuth.getCurrentUser();
+//        Order newOrder = new Order(user.getUid(), user.getUid(), 4.20);
+//        bowlsFirebase.createNewOrder(newOrder);
+        Intent i = new Intent(this, CreateOrderActivity.class);
+        startActivity(i);
+
 
     }
 
