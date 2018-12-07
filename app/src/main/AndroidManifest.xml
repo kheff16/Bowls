@@ -41,6 +41,9 @@
             android:label="Edit Profile"/>
         <activity android:name=".CreateOrderActivity"
             android:label="Create an Order"/>
+        <activity android:name=".ViewOrders.MyOrders"
+            android:label="My Orders"/>
+
 
     </application>
 

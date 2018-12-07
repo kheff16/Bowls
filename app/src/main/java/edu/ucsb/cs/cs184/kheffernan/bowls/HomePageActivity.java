@@ -22,6 +22,7 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseAu
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseCallback;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
+import edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders.MyOrders;
 
 public class HomePageActivity extends Activity implements   NavigationView.OnNavigationItemSelectedListener{
 
@@ -116,19 +117,6 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
         startActivity(i);
     }
 
-    public void createOrderBtnClicked(){
-//        FirebaseUser user = bowlsAuth.getCurrentUser();
-//        Order newOrder = new Order(user.getUid(), user.getUid(), 4.20);
-//        bowlsFirebase.createNewOrder(newOrder);
-        Intent i = new Intent(this, CreateOrderActivity.class);
-        startActivity(i);
-
-
-    }
-
-    public void logOutBtnClicked(View view){
-        bowlsAuth.signOut();
-    }
 
 
     public void viewProfileButtonClicked() {
@@ -171,6 +159,8 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
                         Toast.LENGTH_SHORT);
 
                 toast.show();
+                Intent i = new Intent(this, MyOrders.class);
+                startActivity(i);
                 break;
             }
 
@@ -185,12 +175,12 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
             }
 
             case R.id.create_order_btn: {
-                createOrderBtnClicked();
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "Create Order Button clicked!",
                         Toast.LENGTH_SHORT);
-
                 toast.show();
+                Intent i = new Intent(this, CreateOrderActivity.class);
+                startActivity(i);
 
             }
 
