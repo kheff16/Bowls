@@ -309,7 +309,7 @@ public class BowlsFirebase {
 //        });
 //    }
 
-    public synchronized void getAllOrdersWithStatus(final String status,
+    public synchronized void getTotalAllOrdersWithStatus(final String status,
                                                     @NonNull final BowlsFirebaseCallback<Integer> finishedCalback) {
 
         DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
@@ -326,14 +326,41 @@ public class BowlsFirebase {
                     if (order != null) {
                         if (order.getOrderStatus().equals(status)) {
                             order.setOrderID(postSnapshot.getKey());
-                            //logging shows that the right orders are in fact getting added
-                            Log.d("getAllOrdersWithStatus "+status, order.toString());
                             Orders.add(order);
                         }
                     }
                 }
                 size = Orders.size();
                 finishedCalback.callback(size);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+
+        });
+    }
+
+    public synchronized void getAllOrdersWithStatus(final String status,
+                                                         @NonNull final BowlsFirebaseCallback<ArrayList<Order>> finishedCalback) {
+
+        DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Order> Orders = new ArrayList<>();
+
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    Order order = postSnapshot.getValue(Order.class);
+
+                    if (order != null) {
+                        if (order.getOrderStatus().equals(status)) {
+                            order.setOrderID(postSnapshot.getKey());
+                            Orders.add(order);
+                        }
+                    }
+                }
+                finishedCalback.callback(Orders);
             }
 
             @Override

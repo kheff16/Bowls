@@ -43,6 +43,8 @@
             android:label="Create an Order"/>
         <activity android:name=".ViewOrders.MyOrders"
             android:label="My Orders"/>
+        <activity android:name=".ManagerDashboardActivities.ManagerOrderView"
+            android:label="Order Status"/>
 
 
     </application>
