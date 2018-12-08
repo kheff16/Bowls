@@ -72,7 +72,7 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
                         public void run() {
                             String[] allSpots = new String[usersOrders.size()];
                             for (int i=0; i < usersOrders.size(); i++)
-                                allSpots[i] = usersOrders.get(i).getOrderStatus();
+                                allSpots[i] = usersOrders.get(i).getItems();
 
                             ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                                     R.layout.activity_list_view, allSpots);

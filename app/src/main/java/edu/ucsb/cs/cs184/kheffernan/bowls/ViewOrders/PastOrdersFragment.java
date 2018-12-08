@@ -23,6 +23,8 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseCa
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 import edu.ucsb.cs.cs184.kheffernan.bowls.R;
 
+import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_COMPLETED;
+
 public class PastOrdersFragment extends android.support.v4.app.Fragment  {
 
 
@@ -43,6 +45,7 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
         bowlsFirebaseAuth = new BowlsFirebaseAuth();
         currentUser = bowlsFirebaseAuth.getCurrentUser();
 
+        //will implement on item click later
 //        pastOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -57,19 +60,18 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
             public void callback(ArrayList<Order> data) {
                 if(data != null) {
                     usersOrders = data;
-
-
                     final Handler mainHandler = new Handler(Looper.getMainLooper());
                     mainHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            String[] allSpots = new String[usersOrders.size()];
-                            for (int i=0; i < usersOrders.size(); i++)
-                                allSpots[i] = usersOrders.get(i).getOrderStatus();
+                            String[] allOrders = new String[usersOrders.size()];
 
-                            ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
-                                    R.layout.activity_list_view, allSpots);
-                            pastOrdersListView.setAdapter(adapter);
+                            for (int i=0; i < usersOrders.size(); i++)
+                                    allOrders[i] = usersOrders.get(i).getItems();
+                                    ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
+                                            R.layout.activity_list_view, allOrders);
+                                    pastOrdersListView.setAdapter(adapter);
+
                         }
                     });
                 }
