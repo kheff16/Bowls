@@ -16,37 +16,37 @@ public class PickItemFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.pick_item_fragment, container, false);
-        bowlImage = (ImageView) rootView.findViewById(R.id.bowlImage);
+        bowlImage = (ImageView) userView.findViewById(R.id.bowlImage);
         bowlImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
             }
         });
-        saladImage = (ImageView) rootView.findViewById(R.id.saladImage);
+        saladImage = (ImageView) userView.findViewById(R.id.saladImage);
         bowlImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
             }
         });
-        soupImage = (ImageView) rootView.findViewById(R.id.soupImage);
+        soupImage = (ImageView) userView.findViewById(R.id.soupImage);
         bowlImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
             }
         });
-        breadImage = (ImageView) rootView.findViewById(R.id.breadImage);
+        breadImage = (ImageView) userView.findViewById(R.id.breadImage);
         bowlImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
             }
         });
-        drinkImage = (ImageView) rootView.findViewById(R.id.drinkImage);
+        drinkImage = (ImageView) userView.findViewById(R.id.drinkImage);
         bowlImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
             }
         });
-        checkoutImage = (ImageView) rootView.findViewById(R.id.checkoutImage);
+        checkoutImage = (ImageView) userView.findViewById(R.id.checkoutImage);
         bowlImage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
