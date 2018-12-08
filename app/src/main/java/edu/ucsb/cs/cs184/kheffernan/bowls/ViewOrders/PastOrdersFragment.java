@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
 
@@ -27,7 +30,7 @@ import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_
 
 public class PastOrdersFragment extends android.support.v4.app.Fragment  {
 
-
+    private SwipeRefreshLayout refreshLayout;
     private ListView pastOrdersListView;
     private BowlsFirebase bowlsFirebase;
     private BowlsFirebaseAuth bowlsFirebaseAuth;
@@ -44,6 +47,8 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
         bowlsFirebase = new BowlsFirebase();
         bowlsFirebaseAuth = new BowlsFirebaseAuth();
         currentUser = bowlsFirebaseAuth.getCurrentUser();
+        refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshPastOrders);
+
 
         //will implement on item click later
 //        pastOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -54,7 +59,19 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
 //                startActivityForResult(i, REQUEST_SPOT_DETAILS);
 //            }
 //        });
+        updateUIFromDatabase();
+        return view;
+    }
 
+
+    @Override
+    public  void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setSwipeListener();
+    }
+
+
+    private void updateUIFromDatabase(){
         bowlsFirebase.getUsersOrders(currentUser.getUid(), new BowlsFirebaseCallback<ArrayList<Order>>() {
             @Override
             public void callback(ArrayList<Order> data) {
@@ -67,17 +84,32 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
                             String[] allOrders = new String[usersOrders.size()];
 
                             for (int i=0; i < usersOrders.size(); i++)
-                                    allOrders[i] = usersOrders.get(i).getItems();
-                                    ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
-                                            R.layout.activity_list_view, allOrders);
-                                    pastOrdersListView.setAdapter(adapter);
+                                allOrders[i] = usersOrders.get(i).getItems();
+                            ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
+                                    R.layout.activity_list_view, allOrders);
+                            pastOrdersListView.setAdapter(adapter);
 
                         }
                     });
                 }
             }
         });
+    }
 
-        return view;
+    private void setSwipeListener() {
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                updateUIFromDatabase();
+
+                Toast toast = Toast.makeText(getActivity(),
+                        "Refreshing!",
+                        Toast.LENGTH_SHORT);
+
+                toast.show();
+
+                refreshLayout.setRefreshing(false);
+            }
+        });
     }
 }

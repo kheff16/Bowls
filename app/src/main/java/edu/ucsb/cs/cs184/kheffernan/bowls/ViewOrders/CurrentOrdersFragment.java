@@ -8,13 +8,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,6 +40,7 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
     private ListView pastOrdersListView;
     private BowlsFirebase bowlsFirebase;
     private BowlsFirebaseAuth bowlsFirebaseAuth;
+    private SwipeRefreshLayout refreshLayout;
 
     private FirebaseUser currentUser;
 
@@ -50,6 +55,8 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
         bowlsFirebaseAuth = new BowlsFirebaseAuth();
         currentUser = bowlsFirebaseAuth.getCurrentUser();
 
+        refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshPastOrders);
+
 //        pastOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -59,6 +66,18 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
 //            }
 //        });
 
+       updateUIFromDatabase();
+        return view;
+    }
+
+
+    @Override
+    public  void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setSwipeListener();
+    }
+
+        private void updateUIFromDatabase(){
         bowlsFirebase.getUsersOrders(currentUser.getUid(), new BowlsFirebaseCallback<ArrayList<Order>>() {
             @Override
             public void callback(ArrayList<Order> data) {
@@ -82,7 +101,26 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
                 }
             }
         });
-
-        return view;
     }
+
+    private void setSwipeListener() {
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                updateUIFromDatabase();
+
+                Toast toast = Toast.makeText(getActivity(),
+                        "Refreshing!",
+                        Toast.LENGTH_SHORT);
+
+                toast.show();
+
+                refreshLayout.setRefreshing(false);
+            }
+        });
+    }
+
+
+
+
 }
