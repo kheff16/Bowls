@@ -24,6 +24,7 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseAu
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseCallback;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
+import edu.ucsb.cs.cs184.kheffernan.bowls.ManagerDashboardActivities.ManagerOrderView;
 import edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders.MyOrders;
 
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ACCOUNT_TYPE_BUSINESS;
@@ -53,7 +54,8 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
     private Button inProgress;
     private Button readyForPickUp;
     private Button completed;
-    int newSize;
+    private Button refreshBtn;
+    private Button logOutBtn;
 
 
 
@@ -100,10 +102,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
 
                                 if (user.getAccountType().equals(ACCOUNT_TYPE_BUSINESS)){
                                     setContentView(R.layout.activity_home_page_manager);
-                                    waitingToStart = (Button) findViewById(R.id.waiting_to_start_btn);
-                                    inProgress = (Button) findViewById(R.id.in_progress_btn);
-                                    readyForPickUp = (Button) findViewById(R.id.ready_for_pickup_btn);
-                                    completed = (Button) findViewById(R.id.completed_btn);
+                                    assignDashBoardButtons();
                                     updateBusinessUI();
                                 }
                                 else {
@@ -162,6 +161,24 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
         mDrawerLayout.openDrawer(Gravity.START);
     }
 
+    public void logOutBtnClicked(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Sign Out")
+                .setMessage(("Are you sure you want to sign out?"))
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        bowlsAuth.signOut();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //do nothing
+                    }
+                })
+                .show();
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
@@ -183,22 +200,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
                         Toast.LENGTH_SHORT);
 
                 toast.show();
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Sign Out")
-                            .setMessage(("Are you sure you want to sign out?"))
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    bowlsAuth.signOut();
-                                }
-                            })
-                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    //do nothing
-                                }
-                            })
-                            .show();
+                logOutBtnClicked();
                 break;
             }
 
@@ -246,34 +248,85 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
 
     private void updateBusinessUI(){
 
-        bowlsFirebase.getAllOrdersWithStatus(ORDER_STATUS_COMPLETED, new BowlsFirebaseCallback<Integer>() {
+        bowlsFirebase.getTotalAllOrdersWithStatus(ORDER_STATUS_COMPLETED, new BowlsFirebaseCallback<Integer>() {
             @Override
             public void callback(Integer data) {
                 completed.setText("Completed: ("+data+")");
             }
         });
 
-        bowlsFirebase.getAllOrdersWithStatus(ORDER_STATUS_CREATED, new BowlsFirebaseCallback<Integer>() {
+        bowlsFirebase.getTotalAllOrdersWithStatus(ORDER_STATUS_CREATED, new BowlsFirebaseCallback<Integer>() {
             @Override
             public void callback(Integer data) {
                 waitingToStart.setText("Waiting to Start: ("+data+")");
             }
         });
 
-        bowlsFirebase.getAllOrdersWithStatus(ORDER_STATUS_IN_PROGRESS, new BowlsFirebaseCallback<Integer>() {
+        bowlsFirebase.getTotalAllOrdersWithStatus(ORDER_STATUS_IN_PROGRESS, new BowlsFirebaseCallback<Integer>() {
             @Override
             public void callback(Integer data) {
                 inProgress.setText("In Progress: ("+data+")");
             }
         });
 
-        bowlsFirebase.getAllOrdersWithStatus(ORDER_STATUS_READY_FOR_PICK_UP, new BowlsFirebaseCallback<Integer>() {
+        bowlsFirebase.getTotalAllOrdersWithStatus(ORDER_STATUS_READY_FOR_PICK_UP, new BowlsFirebaseCallback<Integer>() {
             @Override
             public void callback(Integer data) {
                 readyForPickUp.setText("Ready for Pickup: ("+data+")");
             }
         });
 
+    }
+
+    public void assignDashBoardButtons(){
+        waitingToStart = (Button) findViewById(R.id.waiting_to_start_btn);
+        inProgress = (Button) findViewById(R.id.in_progress_btn);
+        readyForPickUp = (Button) findViewById(R.id.ready_for_pickup_btn);
+        completed = (Button) findViewById(R.id.completed_btn);
+        refreshBtn = (Button) findViewById(R.id.refresh_btn);
+        refreshBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateBusinessUI();
+            }
+        });
+        logOutBtn = (Button) findViewById(R.id.log_out_manager_btn);
+        logOutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                logOutBtnClicked();
+            }
+        });
+        waitingToStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToManagerOrderStatus();
+            }
+        });
+        inProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToManagerOrderStatus();
+            }
+        });
+        readyForPickUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToManagerOrderStatus();
+            }
+        });
+        completed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToManagerOrderStatus();
+            }
+        });
+
+    }
+
+    public void goToManagerOrderStatus(){
+        Intent i = new Intent(this, ManagerOrderView.class);
+        startActivity(i);
     }
 
 
