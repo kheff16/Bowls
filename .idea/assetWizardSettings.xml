@@ -19,8 +19,13 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
+<<<<<<< HEAD
                                       <entry key="imageAsset" value="$USER_HOME$/Desktop/Background2.jpg" />
                                       <entry key="outputName" value="ic_background2" />
+=======
+                                      <entry key="imageAsset" value="$USER_HOME$/Desktop/firebase_lockup_400.png" />
+                                      <entry key="outputName" value="firebase_icon" />
+>>>>>>> 76b9307142ca283e103f6e49d511880c5a772194
                                     </map>
                                   </option>
                                 </PersistentState>

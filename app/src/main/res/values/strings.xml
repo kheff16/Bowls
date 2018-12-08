@@ -9,9 +9,23 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+    <string name="action_register_ime">Register</string>
+    <string name="desc_firebase_lockup">Firebase logo and name</string>
+    <string name="emailpassword_title_text">Email and Password</string>
+    <string name="signed_out">Signed Out</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="verify_email">Verify Email</string>
+    <string name="auth_failed">Authentication failed</string>
+    <string name="emailpassword_status_fmt">Email User: %1$s (verified: %2$b)</string>
+    <string name="firebase_status_fmt">Firebase User: %s</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+<<<<<<< HEAD
     <string name="bowl">bowl</string>
     <string name="salad">salad</string>
     <string name="soup">soup</string>
@@ -59,4 +73,7 @@
 
 
 
+=======
+    <string name="error_invalid_fullName">\"Invalid full name\"</string>
+>>>>>>> 76b9307142ca283e103f6e49d511880c5a772194
 </resources>

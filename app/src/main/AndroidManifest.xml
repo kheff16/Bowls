@@ -14,14 +14,37 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".AccessBowls"
-            android:label="@string/app_name">
+            android:name=".MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar" />
+        <activity
+            android:name=".HomePageActivity"
+            android:label="Home"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".UserAuthentication.LoginActivity"
+            android:label="Login" />
+        <activity
+            android:name=".UserAuthentication.RegisterActivity"
+            android:label="Register" />
+        <activity android:name=".AccessBowls"
+            android:label="AccessRegister" />
+        <activity android:name=".ProfilePage"
+            android:label="Profile" />
+        <activity android:name=".EditProfile"
+            android:label="Edit Profile"/>
+        <activity android:name=".CreateOrderActivity"
+            android:label="Create an Order"/>
+        <activity android:name=".ViewOrders.MyOrders"
+            android:label="My Orders"/>
+
+
     </application>
 
 </manifest>
