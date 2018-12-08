@@ -66,11 +66,9 @@ public class ProfilePage extends AppCompatActivity {
                     dialog.dismiss();
                     if(data != null) {
                         user = data;
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "User was not null!",
-                                Toast.LENGTH_SHORT);
 
-                        toast.show();
+
+
                         Handler mainHandler = new Handler(Looper.getMainLooper());
                         mainHandler.post(new Runnable() {
                             @Override
@@ -84,13 +82,7 @@ public class ProfilePage extends AppCompatActivity {
 
                         });
                     }
-                    else {
-                        Toast toast = Toast.makeText(getApplicationContext(),
-                                "User was null!",
-                                Toast.LENGTH_SHORT);
 
-                        toast.show();
-                    }
                 }
             });
         }

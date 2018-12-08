@@ -53,7 +53,8 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
     private Button inProgress;
     private Button readyForPickUp;
     private Button completed;
-    int newSize;
+    private Button refreshBtn;
+    private Button logOutBtn;
 
 
 
@@ -104,6 +105,20 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
                                     inProgress = (Button) findViewById(R.id.in_progress_btn);
                                     readyForPickUp = (Button) findViewById(R.id.ready_for_pickup_btn);
                                     completed = (Button) findViewById(R.id.completed_btn);
+                                    refreshBtn = (Button) findViewById(R.id.refresh_btn);
+                                    refreshBtn.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            updateBusinessUI();
+                                        }
+                                    });
+                                    logOutBtn = (Button) findViewById(R.id.log_out_manager_btn);
+                                    logOutBtn.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            logOutBtnClicked();
+                                        }
+                                    });
                                     updateBusinessUI();
                                 }
                                 else {
@@ -162,6 +177,24 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
         mDrawerLayout.openDrawer(Gravity.START);
     }
 
+    public void logOutBtnClicked(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Sign Out")
+                .setMessage(("Are you sure you want to sign out?"))
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        bowlsAuth.signOut();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //do nothing
+                    }
+                })
+                .show();
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
@@ -183,22 +216,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
                         Toast.LENGTH_SHORT);
 
                 toast.show();
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle("Sign Out")
-                            .setMessage(("Are you sure you want to sign out?"))
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    bowlsAuth.signOut();
-                                }
-                            })
-                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    //do nothing
-                                }
-                            })
-                            .show();
+                logOutBtnClicked();
                 break;
             }
 
