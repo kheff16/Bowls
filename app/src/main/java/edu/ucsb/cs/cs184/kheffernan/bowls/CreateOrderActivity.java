@@ -4,8 +4,13 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
+import android.support.v4.widget.SwipeRefreshLayout;
+
 import android.support.v7.app.AlertDialog;
+
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -27,6 +32,9 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.MenuItemAdapter;
 import edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders.MyOrders;
 
 public class CreateOrderActivity extends AppCompatActivity {
+
+    //TAG
+    private final String LOG_TAG = "CreateOrderActivity";
 
     //UI Vars
     private ListView listView;
@@ -115,6 +123,8 @@ public class CreateOrderActivity extends AppCompatActivity {
                 })
                 .show();
     }
+
+
 
 
 

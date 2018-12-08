@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -22,6 +24,8 @@ import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_
 
 public class MyOrders extends AppCompatActivity {
 
+    private final String LOG_TAG = "MyOrdersActivity";
+    //UI Vars
     private BowlsUser user;
     private BowlsFirebase scFirebase;
     private BowlsFirebaseAuth scFirebaseAuth;
@@ -36,6 +40,7 @@ public class MyOrders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab_layout_orders);
         getSupportActionBar().setElevation(0);
+
 
 
         scFirebase = new BowlsFirebase();
@@ -82,4 +87,5 @@ public class MyOrders extends AppCompatActivity {
             overridePendingTransition(0,0);
         }
     }
+
 }
