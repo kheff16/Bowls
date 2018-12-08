@@ -2,7 +2,11 @@ package edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface;
 
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
+import android.util.Log;
+import android.widget.ArrayAdapter;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -24,6 +28,7 @@ import java.util.UUID;
 
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
+import edu.ucsb.cs.cs184.kheffernan.bowls.R;
 
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_PATH;
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_COMPLETED;
@@ -33,6 +38,8 @@ public class BowlsFirebase {
 
     private DatabaseReference bowlsDatabase;
     private StorageReference bowlsStorage;
+
+    private ArrayList<Order> ordersWithStatus;
 
     public BowlsFirebase() {
         bowlsDatabase = FirebaseDatabase.getInstance().getReference();
@@ -268,5 +275,72 @@ public class BowlsFirebase {
         DatabaseReference myRef = bowlsDatabase.child(USER_PATH).child(userID);
         myRef.removeValue();
     }
+
+
+//    public synchronized void getAllOrdersWithStatus(final String status,
+//            @NonNull final BowlsFirebaseCallback<ArrayList<Order>> finishedCalback) {
+//
+//        DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
+//
+//        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                ArrayList<Order> Orders = new ArrayList<>();
+//
+//                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+//                    Order order = postSnapshot.getValue(Order.class);
+//
+//                    if (order != null) {
+//                        if (order.getOrderStatus().equals(status)) {
+//                            order.setOrderID(postSnapshot.getKey());
+//                            //logging shows that the right orders are in fact getting added
+//                            Log.d("getAllOrdersWithStatus "+status, order.toString());
+//                            Orders.add(order);
+//                        }
+//                    }
+//                }
+//
+//                finishedCalback.callback(Orders);
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {}
+//
+//        });
+//    }
+
+    public synchronized void getAllOrdersWithStatus(final String status,
+                                                    @NonNull final BowlsFirebaseCallback<Integer> finishedCalback) {
+
+        DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Order> Orders = new ArrayList<>();
+                int size=-1;
+
+                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                    Order order = postSnapshot.getValue(Order.class);
+
+                    if (order != null) {
+                        if (order.getOrderStatus().equals(status)) {
+                            order.setOrderID(postSnapshot.getKey());
+                            //logging shows that the right orders are in fact getting added
+                            Log.d("getAllOrdersWithStatus "+status, order.toString());
+                            Orders.add(order);
+                        }
+                    }
+                }
+                size = Orders.size();
+                finishedCalback.callback(size);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+
+        });
+    }
+
 
 }
