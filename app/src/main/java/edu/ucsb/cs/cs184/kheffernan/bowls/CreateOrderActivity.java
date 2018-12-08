@@ -1,7 +1,10 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +24,7 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.MenuItem;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 import edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.MenuItemAdapter;
+import edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders.MyOrders;
 
 public class CreateOrderActivity extends AppCompatActivity {
 
@@ -72,13 +76,16 @@ public class CreateOrderActivity extends AppCompatActivity {
 
                     Toast.makeText(CreateOrderActivity.this, str, Toast.LENGTH_SHORT).show();
                     FirebaseUser user = bowlsAuth.getCurrentUser();
-                    final ProgressDialog dialog = ProgressDialog.show(CreateOrderActivity.this, "",
-                            "Creating order...", true, true);
+//                    final ProgressDialog dialog = ProgressDialog.show(CreateOrderActivity.this, "",
+//                            "Creating order...", true, true);
+                    showOrderConfirmedDialog();
 
 
                     Order newOrder = new Order(user.getUid(), user.getUid(), str.toString(), 4.20);
 
                     bowlsFirebase.createNewOrder(newOrder);
+
+
                 }
             }
         });
@@ -94,6 +101,19 @@ public class CreateOrderActivity extends AppCompatActivity {
         adapter = new MenuItemAdapter(this, menuItemLinkedList);
         listView.setAdapter(adapter);
 
+    }
+
+    private void showOrderConfirmedDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Order Confirmed")
+                .setMessage(("Thanks for placing an order! We'll let you know when it's ready for pickup."))
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //go to homepage
+                        finish();
+                    }
+                })
+                .show();
     }
 
 
