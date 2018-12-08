@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/in_progress_btn"
+        android:layout_width="166dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="17dp"
+        android:text="In Progress" />
+
+    <Button
+        android:id="@+id/waiting_to_start_btn"
+        android:layout_width="162dp"
+        android:layout_height="157dp"
+        android:layout_alignStart="@+id/ready_for_pickup_btn"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="46dp"
+        android:text="Waiting to Start" />
+
+    <Button
+        android:id="@+id/completed_btn"
+        android:layout_width="167dp"
+        android:layout_height="154dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="17dp"
+        android:text="Completed" />
+
+    <Button
+        android:id="@+id/ready_for_pickup_btn"
+        android:layout_width="165dp"
+        android:layout_height="161dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="222dp"
+        android:text="Ready for Pickup" />
+
+    <Button
+        android:id="@+id/refresh_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="57dp"
+        android:text="Refresh" />
+
+    <Button
+        android:id="@+id/log_out_manager_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/refresh_btn"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="47dp"
+        android:text="Log Off" />
+</RelativeLayout>

@@ -13,6 +13,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
 
@@ -70,6 +71,15 @@ public class EditProfile extends AppCompatActivity {
                 }
             }
         });
+
+        editAcctTypeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (editAcctTypeSwitch.isChecked()){
+                    showAccountChangeWarning();
+                }
+            }
+        });
     }
 
 
@@ -106,6 +116,24 @@ public class EditProfile extends AppCompatActivity {
         if(newNameSet||newAcctTypeSet) {
             setResult(PROFILE_EDITED); }
             finish();
+        }
+
+        private void showAccountChangeWarning(){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Warning")
+                    .setMessage(("You are attempting to change your account from Customer to Business. This change is for Buddha Bowls employees only and cannot be undone."))
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .setNegativeButton("Nevermind", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            editAcctTypeSwitch.setChecked(false);
+                        }
+                    })
+                    .show();
         }
 
 
