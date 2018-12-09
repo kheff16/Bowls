@@ -35,38 +35,53 @@
     <string name="chooseItem">Choose An Item</string>
     <string name="store_name">Buddha Bowls</string>
 
+
+    <string name="BuildYourOwn">Build Your Own</string>
+    <string name="CustomBowlsAndSalad">Custom Bowls And Salad</string>
+
+    <string name="Bowls">Bowls</string>
+    <string name="Salad">Salad</string>
+    <string name="Soup">Soup</string>
+    <string name="Extras">Extras</string>
+    <string name="Drinks">Drinks</string>
+
+
+    <string name="pickYourBowl">Pick Your Bowl</string>
+    <string name="Sourdough">Sourdough</string>
+    <string name="Wholewheat">Whole Wheat</string>
+    <string name="Salad">Salad</string>
+
     <string name="chooseSauce">Choose Your Sauce</string>
-    <string name="sauce1">sauce1</string>
-    <string name="sauce2">sauce2</string>
-    <string name="sauce3">sauce3</string>
-    <string name="sauce4">sauce4</string>
-    <string name="sauce5">sauce5</string>
+    <string name="sauce1">BBQ</string>
+    <string name="sauce2">Pesto</string>
+    <string name="sauce3">Marinara</string>
+    <string name="sauce4">Homemade Hummus</string>
 
     <string name="chooseMeat">Choose Your Meat</string>
-    <string name="meat1">meat1</string>
-    <string name="meat2">meat2</string>
+    <string name="meat1">Marinated Grilled Chicken (+$1.50) </string>
+    <string name="meat2">Italian Sausage (+$1.50)</string>
     <string name="meat3">meat3</string>
     <string name="meat4">meat4</string>
     <string name="meat5">meat5</string>
 
     <string name="chooseVegetable">Choose Your Vegetable</string>
-    <string name="vegetable1">vegetable1</string>
-    <string name="vegetable2">vegetable2</string>
-    <string name="vegetable3">vegetable3</string>
+    <string name="vegetable1">Grilled Onions</string>
+    <string name="vegetable2">Cooked Spinach</string>
+    <string name="vegetable3">Sauteed Musrooms</string>
     <string name="vegetable4">vegetable4</string>
     <string name="vegetable5">vegetable5</string>
 
     <string name="chooseCheese">Choose Your Cheese</string>
-    <string name="cheese1">cheese1</string>
-    <string name="cheese2">cheese2</string>
-    <string name="cheese3">cheese3</string>
+    <string name="cheese1">Mozzarella</string>
+    <string name="cheese2">Pepper Jack</string>
+    <string name="cheese3">Feta Cheddar</string>
     <string name="cheese4">cheese4</string>
     <string name="cheese5">cheese5</string>
 
     <string name="chooseExtras">Choose Your Extras</string>
-    <string name="extras1">extras1</string>
-    <string name="extras2">extras2</string>
-    <string name="extras3">extras3</string>
+    <string name="extras1">Bacon</string>
+    <string name="extras2">Fried Egg</string>
+    <string name="extras3">Avocado</string>
     <string name="extras4">extras4</string>
     <string name="extras5">extras5</string>
 
@@ -74,7 +89,53 @@
     <string name="submit">Submit</string>
     <string name="AddToCart">Add To Cart</string>
 
-=======
+
+
+    <string name="bowl1">Hawaiian BBQ Bowl </string>
+    <string name="bowl1price">10.50</string>
+    <string name="bowl1description">BBQ Chicken, Bacon, Pineapple, Red Onions, Grilled Onions, Roasted Bell Peppers, Tomatoes, Mozzarella Cheese</string>
+
+    <string name="bowl2">Mediterranean Bowl </string>
+    <string name="bowl2price">9.50</string>
+    <string name="bowl2description">Avocado, Cucumbers, Grilled Onions, Tomatoes, Red Onions, Mixed Greens Artichoke Hearts, Kalamata Olives, Feta Cheese, Hummus, Pesto Drizzle, Add Chicken(+1.50)</string>
+
+    <string name="bowl3">Pizza Bowl </string>
+    <string name="bowl3price">8.50</string>
+    <string name="bowl3description">Marinara Sauce, Cooked Spinach, Grilled Onions, Roasted Bell Peppers, Kalamata Olives, Tomatoes, Mozzarella Cheese, and Italian sausage (+1.50)</string>
+
+    <string name="bowl4"> Hangover Bowl </string>
+    <string name="bowl4price">11.00</string>
+    <string name="bowl4description">Italian Sausage, Bacon, Egg, Tomatoes, Grilled Onions, Roasted Bell Peppers, Jalapenos, Pepper Jack Cheese, Pesto Aiolo</string>
+
+    <string name="bowl5"> The Mac Daddy </string>
+    <string name="bowl5price">8.50</string>
+    <string name="bowl5description">Extra Cheese, Bacon Bits(+0.50), Add Chicken, Chili Or Sausage (+1.50)</string>
+
+
+    <string name="soup1">Tomato Basil Soup </string>
+    <string name="soup1price">8.50</string>
+    <string name="soup1description">Served with a side of cheesy bread</string>
+
+    <string name="soup2">New England Clam Chowder </string>
+    <string name="soup2price">10.00</string>
+    <string name="soup2description"> </string>
+
+    <string name="soup3">Chili </string>
+    <string name="soup3price">10.00</string>
+    <string name="soup3description">Served with sour cream and cheddar cheese</string>
+
+
+    <string name="Custombowl">Custom Bread Bowl</string>
+    <string name="Custombowlprice">8.50+</string>
+    <string name="Custombowldescription">Create Your Own Bread Bowl</string>
+
+
+
+
+
+
+
+    =======
     <string name="error_invalid_fullName">\"Invalid full name\"</string>
 >>>>>>> 76b9307142ca283e103f6e49d511880c5a772194
 </resources>
