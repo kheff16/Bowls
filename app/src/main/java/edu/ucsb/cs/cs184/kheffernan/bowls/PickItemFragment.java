@@ -11,10 +11,10 @@ import android.widget.ImageView;
 
 public class PickItemFragment extends Fragment {
     ImageView bowlImage, saladImage, soupImage, breadImage, drinkImage, checkoutImage;
-    private onFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener mListener;
 
     public PickItemFragment(){
-
+        //empty
     }
 
     View userView;

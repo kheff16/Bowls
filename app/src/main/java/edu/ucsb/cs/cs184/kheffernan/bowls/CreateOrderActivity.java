@@ -1,8 +1,6 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls;
 
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -24,10 +22,8 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.MenuItem;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 import edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.MenuItemAdapter;
-import edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders.MyOrders;
 
 public class CreateOrderActivity extends AppCompatActivity {
-
     //UI Vars
     private ListView listView;
     private Button submitOrderButton;
@@ -38,7 +34,6 @@ public class CreateOrderActivity extends AppCompatActivity {
 
     //Local Object Vars
     private BowlsUser bowlsUser;
-
 
     private HashSet<String> menuItemHashSet = new HashSet<>();
     private List<MenuItem> menuItemLinkedList = new LinkedList<>();
@@ -55,7 +50,6 @@ public class CreateOrderActivity extends AppCompatActivity {
 
         bowlsAuth = new BowlsFirebaseAuth();
         bowlsFirebase = new BowlsFirebase();
-
 
         for (int i=0; i < 10; i++) {
             menuItemHashSet.add("menuItem" +" "+ String.valueOf(i + 1));

@@ -10,7 +10,6 @@ public class CustomerActivity extends AppCompatActivity implements NavigationVie
 
     @Override
     public void changeFragment(int id){
-
         switch(id){
             case 1:
                 BowlToppingsFragment fragment1 = new BowlToppingsFragment();
