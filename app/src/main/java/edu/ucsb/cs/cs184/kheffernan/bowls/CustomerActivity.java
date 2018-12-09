@@ -1,72 +1,56 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls;
 
-public class CustomerActivity {
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 
-
-
-
-
-
-    /*
-    private int[] icons = {
-
-
-    };
-
-    //private CustomFragmentsPagerAdapter mCustomFragmentsPager;
-    private TabLayout mTabLayout;
-    private ViewPager mViewPager;
+public class CustomerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnFragmentInteractionListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void changeFragment(int id){
 
-        mCustomFragmentsPager = new CustomFragmentsPagerAdapter(getSupportFragmentManager());
-        mViewPager = (ViewPager) findViewById(R.id.fragmentsPager);
-        mTabLayout = (TabLayout) findViewById(R.id.fragmentTabs);
-        mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-        mTabLayout.setTabMode(TabLayout.MODE_FIXED);
+        switch(id){
+            case 1:
+                BowlToppingsFragment fragment1 = new BowlToppingsFragment();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.customerOrderFrame, fragment1);
+                ft.commit();
+                //commit
+            case 2:
+                SaladToppingsFragment fragment2 = new SaladToppingsFragment();
+                FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
+                ft2.replace(R.id.customerOrderFrame, fragment2);
+                ft2.commit();
 
-        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                mViewPager.setCurrentItem(tab.getPosition());
-            }
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-            }
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-            }
-        });
-        setupViewPager(mViewPager);
-        setupTabIcons();
-        //A toast to show your package name for us
-        Toast.makeText(this, getPackageName(this), Toast.LENGTH_LONG).show();
-    }
+            case 3:
+                SoupToppingsFragment fragment3 = new SoupToppingsFragment();
+                FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
+                ft3.replace(R.id.customerOrderFrame, fragment3);
+                ft3.commit();
 
-    private void setupTabIcons() {
-        for(int i = 0; i< mTabLayout.getTabCount(); i++){
-            mTabLayout.getTabAt(i).setIcon(icons[i]);
-            int IconColor = ContextCompat.getColor(this, R.color.colorwhite);
-            mTabLayout.getTabAt(i).getIcon().setColorFilter(IconColor, PorterDuff.Mode.SRC_IN);
+            case 4:
+                BreadOptionsFragment fragment4 = new BreadOptionsFragment();
+                FragmentTransaction ft4 = getSupportFragmentManager().beginTransaction();
+                ft4.replace(R.id.customerOrderFrame, fragment4);
+                ft4.commit();
+
+            case 5:
+                DrinkOptionsFragment fragment5 = new DrinkOptionsFragment();
+                FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
+                ft5.replace(R.id.customerOrderFrame, fragment5);
+                ft5.commit();
+
+            case 6:
+                PickItemFragment fragment6 = new PickItemFragment();
+                FragmentTransaction ft6 = getSupportFragmentManager().beginTransaction();
+                ft6.replace(R.id.customerOrderFrame, fragment6);
+                ft6.commit();
         }
+
+        //Cart is an activity so don't include here
     }
-
-    private  void setupViewPager(ViewPager pager){
-
-    }
-
-    // a function to retrieve the package name
-    public static String getPackageName(Context context) {
-        ApplicationInfo applicationInfo = context.getApplicationInfo();
-        return applicationInfo.packageName;
-    }
-    */
-
-
-
 
 
 
