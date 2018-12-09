@@ -62,7 +62,7 @@ public class BowlsFirebase {
     }
 
 
-    // Get a parking order from the data base
+    // Get an order from the data base
     public void getOrder(final String orderID,
                                @NonNull final BowlsFirebaseCallback<Order> finishedCallback) {
 
@@ -75,6 +75,9 @@ public class BowlsFirebase {
 
                 if(order != null) {
                     order.setOrderID(orderID);
+                }
+                else{
+                    Log.d("FIREBASE: ", "NO ORDER WITH THIS ID returned");
                 }
 
                 finishedCallback.callback(order);

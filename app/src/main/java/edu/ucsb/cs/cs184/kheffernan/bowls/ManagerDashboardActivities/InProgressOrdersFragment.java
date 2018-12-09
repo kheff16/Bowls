@@ -1,5 +1,6 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls.ManagerDashboardActivities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -10,6 +11,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,6 +24,7 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 import edu.ucsb.cs.cs184.kheffernan.bowls.R;
 
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_IN_PROGRESS;
+import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.REQUEST_ORDER_DETAILS;
 
 public class InProgressOrdersFragment extends Fragment {
 
@@ -40,14 +43,15 @@ public class InProgressOrdersFragment extends Fragment {
         refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshInProgress);
 
 
-//        waitingOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent i = new Intent(getActivity().getApplicationContext(), SpotDetailActivity.class);
-//                i.putExtra("orderID", usersOrders.get(position).getOrderID());
-//                startActivityForResult(i, REQUEST_SPOT_DETAILS);
-//            }
-//        });
+        inProgressOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getActivity().getApplicationContext(), OrderDetailActivity.class);
+                i.putExtra("orderID", Orders.get(position).getOrderID());
+                startActivityForResult(i, REQUEST_ORDER_DETAILS);
+            }
+        });
+
         updateUIFromDatabase();
 
         return view;
@@ -90,7 +94,7 @@ public class InProgressOrdersFragment extends Fragment {
                         public void run() {
                             String[] allOrders = new String[Orders.size()];
                             for (int i=0; i < Orders.size(); i++)
-                                allOrders[i] = Orders.get(i).getItems();
+                                allOrders[i] = Orders.get(i).getOrderID();
 
                             ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                                     R.layout.activity_list_view, allOrders);
