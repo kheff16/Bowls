@@ -69,10 +69,10 @@ public class MenuItemAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        final MenuItem country = linkedList.get(position);
+        final MenuItem item = linkedList.get(position);
         checkBoxState = new boolean[linkedList.size()];
 
-        holder.title.setText(country.getName());
+        holder.title.setText(item.getName());
 
         /** checkBoxState has the value of checkBox ie true or false,
          * The position is used so that on scroll your selected checkBox maintain its state **/
@@ -95,12 +95,12 @@ public class MenuItemAdapter extends BaseAdapter {
 
 
         /**if country is in checkedForMenuItem then set the checkBox to true **/
-        if (checkedForMenuItem.get(country) != null) {
-            holder.selectionBox.setChecked(checkedForMenuItem.get(country));
+        if (checkedForMenuItem.get(item) != null) {
+            holder.selectionBox.setChecked(checkedForMenuItem.get(item));
         }
 
         /**Set tag to all checkBox**/
-        holder.selectionBox.setTag(country);
+        holder.selectionBox.setTag(item);
 
         return convertView;
     }

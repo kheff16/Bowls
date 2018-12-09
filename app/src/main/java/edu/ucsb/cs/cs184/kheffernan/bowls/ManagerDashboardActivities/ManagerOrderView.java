@@ -1,12 +1,10 @@
-package edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders;
+package edu.ucsb.cs.cs184.kheffernan.bowls.ManagerDashboardActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -18,22 +16,17 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseAu
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 import edu.ucsb.cs.cs184.kheffernan.bowls.R;
+import edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.ManagerOrderListPagerAdapter;
 import edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.OrderListPagerAdapter;
 
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_DELETED;
 
-public class MyOrders extends AppCompatActivity {
+public class ManagerOrderView extends AppCompatActivity {
 
-    private final String LOG_TAG = "MyOrdersActivity";
-    //UI Vars
-    private BowlsUser user;
-    private BowlsFirebase scFirebase;
-    private BowlsFirebaseAuth scFirebaseAuth;
-    private FirebaseUser currentUser;
 
-    private ListView ownedOrdersLV;
+//    private ListView ownedOrdersLV;
 
-    private ArrayList<Order> usersOrders;
+//    private ArrayList<Order> usersOrders;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,19 +35,16 @@ public class MyOrders extends AppCompatActivity {
         getSupportActionBar().setElevation(0);
 
 
-
-        scFirebase = new BowlsFirebase();
-        scFirebaseAuth = new BowlsFirebaseAuth();
-        currentUser = scFirebaseAuth.getCurrentUser();
-
         TabLayout tabLayout = findViewById(R.id.order_tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Past Orders"));
+        tabLayout.addTab(tabLayout.newTab().setText("New"));
         tabLayout.addTab(tabLayout.newTab().setText("In Progress"));
+        tabLayout.addTab(tabLayout.newTab().setText("Ready for Pickup"));
+        tabLayout.addTab(tabLayout.newTab().setText("Completed"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = findViewById(R.id.order_view_pager);
 
-        final OrderListPagerAdapter adapter = new OrderListPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
+        final ManagerOrderListPagerAdapter adapter = new ManagerOrderListPagerAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
 
         viewPager.setAdapter(adapter);
 
@@ -87,5 +77,4 @@ public class MyOrders extends AppCompatActivity {
             overridePendingTransition(0,0);
         }
     }
-
 }

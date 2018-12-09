@@ -3,14 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-        <ListView
-            android:id="@+id/list_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/submit_order_btn"></ListView>
-
-
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submit_order_btn"></ListView>
 
     <Button
         android:id="@+id/submit_order_btn"

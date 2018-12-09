@@ -1,17 +1,13 @@
-package edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders;
+package edu.ucsb.cs.cs184.kheffernan.bowls.ManagerDashboardActivities;
 
-import android.app.Fragment;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,56 +16,45 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Map;
 
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebase;
-import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseAuth;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseCallback;
-import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
 import edu.ucsb.cs.cs184.kheffernan.bowls.R;
 
-public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
+import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_COMPLETED;
+import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.REQUEST_ORDER_DETAILS;
 
-    private ListView pastOrdersListView;
+public class CompletedOrdersFragment extends Fragment {
+    private ListView completedOrdersListView;
     private BowlsFirebase bowlsFirebase;
-    private BowlsFirebaseAuth bowlsFirebaseAuth;
     private SwipeRefreshLayout refreshLayout;
 
-    private FirebaseUser currentUser;
-
-    private ArrayList<Order> usersOrders;
+    private ArrayList<Order> Orders;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_past_orders, container, false);
-        pastOrdersListView = view.findViewById(R.id.list);
+        View view =  inflater.inflate(R.layout.fragment_completed_orders, container, false);
+        completedOrdersListView = view.findViewById(R.id.list);
 
         bowlsFirebase = new BowlsFirebase();
-        bowlsFirebaseAuth = new BowlsFirebaseAuth();
-        currentUser = bowlsFirebaseAuth.getCurrentUser();
+        refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshCompleted);
 
-        refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshPastOrders);
 
-//        pastOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent i = new Intent(getActivity().getApplicationContext(), SpotDetailActivity.class);
-//                i.putExtra("orderID", usersOrders.get(position).getOrderID());
-//                startActivityForResult(i, REQUEST_SPOT_DETAILS);
-//            }
-//        });
+        completedOrdersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getActivity().getApplicationContext(), OrderDetailActivity.class);
+                i.putExtra("orderID", Orders.get(position).getOrderID());
+                startActivityForResult(i, REQUEST_ORDER_DETAILS);
+            }
+        });
 
-       updateUIFromDatabase();
+        updateUIFromDatabase();
+
         return view;
     }
-
 
     @Override
     public  void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -77,25 +62,26 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
         setSwipeListener();
     }
 
-        private void updateUIFromDatabase(){
-        bowlsFirebase.getUsersOrders(currentUser.getUid(), new BowlsFirebaseCallback<ArrayList<Order>>() {
+
+    private void updateUIFromDatabase(){
+        bowlsFirebase.getAllOrdersWithStatus(ORDER_STATUS_COMPLETED, new BowlsFirebaseCallback<ArrayList<Order>>() {
             @Override
             public void callback(ArrayList<Order> data) {
                 if(data != null) {
-                    usersOrders = data;
+                    Orders = data;
 
 
                     final Handler mainHandler = new Handler(Looper.getMainLooper());
                     mainHandler.post(new Runnable() {
                         @Override
                         public void run() {
-                            String[] allOrders = new String[usersOrders.size()];
-                            for (int i=0; i < usersOrders.size(); i++)
-                                allOrders[i] = usersOrders.get(i).getItems();
+                            String[] allOrders = new String[Orders.size()];
+                            for (int i=0; i < Orders.size(); i++)
+                                allOrders[i] = Orders.get(i).getOrderID();
 
                             ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                                     R.layout.activity_list_view, allOrders);
-                            pastOrdersListView.setAdapter(adapter);
+                            completedOrdersListView.setAdapter(adapter);
                         }
                     });
                 }
@@ -119,8 +105,4 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
             }
         });
     }
-
-
-
-
 }
