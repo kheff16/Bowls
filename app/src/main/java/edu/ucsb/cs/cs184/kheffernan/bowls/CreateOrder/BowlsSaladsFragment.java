@@ -15,7 +15,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebase;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
@@ -77,9 +76,11 @@ public class BowlsSaladsFragment extends Fragment {
     }
 
     private void updateUIFromDatabase(){
-        String[] allCustomBowls = new String[2];
-        allCustomBowls[0]="bread";
-        allCustomBowls[1] = "mushrooms";
+        String[] allCustomBowls = new String[4];
+        allCustomBowls[0]="Hawaiian BBQ Bowl";
+        allCustomBowls[1] = "Mediterranean Bowl";
+        allCustomBowls[2] ="Pizza Bowl";
+        allCustomBowls[3] ="Hangover Bowl";
 
         ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.activity_list_view,allCustomBowls);
         bowlsSaldsListView.setAdapter(adapter);
