@@ -92,7 +92,7 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/move_to_next_stage_btn"
+            android:id="@+id/contact_customer_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -101,7 +101,7 @@
             android:text="Contact Customer" />
 
         <Button
-            android:id="@+id/contact_customer_btn"
+            android:id="@+id/move_to_next_stage_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Move to Next Stage" />
