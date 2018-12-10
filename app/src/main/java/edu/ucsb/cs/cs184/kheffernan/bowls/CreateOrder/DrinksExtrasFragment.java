@@ -75,9 +75,18 @@ public class DrinksExtrasFragment extends Fragment {
     }
 
     private void updateUIFromDatabase(){
-        String[] allCustomBowls = new String[2];
-        allCustomBowls[0]="soda";
-        allCustomBowls[1] = "sauce";
+        String[] allCustomBowls = new String[11];
+        allCustomBowls[0]="Sprite";
+        allCustomBowls[1]="Coke";
+        allCustomBowls[2]="Lemonade";
+        allCustomBowls[3]="Water";
+        allCustomBowls[4] ="BBQ Sauce";
+        allCustomBowls[5] ="Pesto Sauce";
+        allCustomBowls[6] ="Marinara Sauce";
+        allCustomBowls[7] ="Homemade Hummus";
+        allCustomBowls[8] ="Avocado";
+        allCustomBowls[9] ="Egg";
+        allCustomBowls[10] ="Bacon";
 
         ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.activity_list_view,allCustomBowls);
         drinksExtrasListView.setAdapter(adapter);

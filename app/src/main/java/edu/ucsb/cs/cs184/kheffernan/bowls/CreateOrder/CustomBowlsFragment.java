@@ -1,10 +1,7 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls.CreateOrder;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -20,13 +17,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebase;
-import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseCallback;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
-import edu.ucsb.cs.cs184.kheffernan.bowls.ManagerDashboardActivities.OrderDetailActivity;
 import edu.ucsb.cs.cs184.kheffernan.bowls.R;
-
-import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_CREATED;
-import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.REQUEST_ORDER_DETAILS;
 
 public class CustomBowlsFragment extends Fragment {
     private ListView customBowlsListView;
@@ -84,8 +76,8 @@ public class CustomBowlsFragment extends Fragment {
 
     private void updateUIFromDatabase(){
         String[] allCustomBowls = new String[2];
-        allCustomBowls[0]="bread";
-        allCustomBowls[1] = "mushrooms";
+        allCustomBowls[0]="Custom Bread Bowl";
+        allCustomBowls[1] = "Custom Salad Bowl";
 
         ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.activity_list_view,allCustomBowls);
 

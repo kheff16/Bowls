@@ -75,9 +75,10 @@ public class SoupFragment extends Fragment {
     }
 
     private void updateUIFromDatabase(){
-        String[] allCustomBowls = new String[2];
-        allCustomBowls[0]="tomato basil";
-        allCustomBowls[1] = "clam chowder";
+        String[] allCustomBowls = new String[3];
+        allCustomBowls[0]="Tomato Basil";
+        allCustomBowls[1] = "New England Clam Chowder";
+        allCustomBowls[2] = "Chili";
 
         ArrayAdapter adapter = new ArrayAdapter<>(getActivity(), R.layout.activity_list_view,allCustomBowls);
         soupListView.setAdapter(adapter);
