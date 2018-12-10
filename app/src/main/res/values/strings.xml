@@ -26,4 +26,9 @@
         completions."
     </string>
     <string name="error_invalid_fullName">\"Invalid full name\"</string>
+    <string name="homePageUserText">Welcome back, </string>
+    <string name="homePageNavInstruction">
+        \nTo place an order click on \"Menu\" at the top of the screen and navigate to Create an Order.
+        Our most popular item is the Mac Daddy.</string>
+    <string name="homePagePhotoText">Breadddd</string>
 </resources>

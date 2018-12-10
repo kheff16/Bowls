@@ -109,7 +109,8 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
                                     setContentView(R.layout.activity_home_page);
                                     currentUserText = (TextView) findViewById(R.id.current_user_id);
                                     mDrawerLayout = findViewById(R.id.drawer_layout);
-                                    currentUserText.setText("bowlsFirebase.getBowlsUser: \nFullname = " +user.getFullname());
+                                    currentUserText.append(" " + user.getFullname() + '\n');
+                                    //currentUserText.setText("bowlsFirebase.getBowlsUser: \nFullname = " +user.getFullname());
                                     setNavigationViewListner();
                                 }
 
@@ -187,7 +188,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
             case R.id.profile_page_btn: {
                 viewProfileButtonClicked();
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "profile page button clicked!",
+                        "Navigating to your Profile",
                         Toast.LENGTH_SHORT);
 
                 toast.show();
@@ -206,7 +207,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
 
             case R.id.my_orders_btn: {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "My orders button clicked!",
+                        "Taking you to your recent and previous orders",
                         Toast.LENGTH_SHORT);
 
                 toast.show();
@@ -217,7 +218,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
 
             case R.id.view_menu_btn: {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "View Menu button clicked!",
+                        "Loading the Menu",
                         Toast.LENGTH_SHORT);
 
                 toast.show();
@@ -227,7 +228,7 @@ public class HomePageActivity extends Activity implements   NavigationView.OnNav
 
             case R.id.create_order_btn: {
                 Toast toast = Toast.makeText(getApplicationContext(),
-                        "Create Order Button clicked!",
+                        "Prepare your tastebuds...",
                         Toast.LENGTH_SHORT);
                 toast.show();
                 Intent i = new Intent(this, CreateOrderActivity.class);
