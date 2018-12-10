@@ -7,7 +7,6 @@ import android.view.View;
 
 import edu.ucsb.cs.cs184.kheffernan.bowls.UserAuthentication.LoginActivity;
 import edu.ucsb.cs.cs184.kheffernan.bowls.UserAuthentication.RegisterActivity;
-import edu.ucsb.cs.cs184.kheffernan.bowls.AccessBowls;
 
 public class MainActivity  extends Activity {
 

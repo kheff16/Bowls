@@ -33,8 +33,6 @@
         <activity
             android:name=".UserAuthentication.RegisterActivity"
             android:label="Register" />
-        <activity android:name=".AccessBowls"
-            android:label="AccessRegister" />
         <activity android:name=".ProfilePage"
             android:label="Profile" />
         <activity android:name=".EditProfile"

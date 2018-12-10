@@ -1,11 +1,6 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls;
 
-import android.support.design.widget.NavigationView;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-
+/*
 public class CustomerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnFragmentInteractionListener {
 
     @Override
@@ -53,4 +48,4 @@ public class CustomerActivity extends AppCompatActivity implements NavigationVie
 
 
 
-}
+*/

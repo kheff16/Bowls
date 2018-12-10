@@ -23,13 +23,15 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="@android:color/darker_gray" />
+
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
-            android:id="@+id/cardviewcustombowl" >
+            android:id="@+id/cardviewcustombowl"
+            android:focusable="true"
+            android:background="?android:selectableItemBackground">
 
             <LinearLayout
             android:layout_width="match_parent"
@@ -64,6 +66,11 @@
                     android:text="@+string/Custombowldescription"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+
+                <CheckBox android:id="@+id/checkbox_custombowl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
@@ -80,8 +87,7 @@
             android:text="@+string/Bowls"
             android:textColor="@android:color/white"
             android:textSize="30dp"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"/>
+            />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -90,9 +96,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
-            android:id="@+id/cardviewbowl1">
+            android:id="@+id/cardviewbowl1"
+            android:background="?android:selectableItemBackground">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -124,7 +129,10 @@
                     android:text="@+string/bowl1description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
-
+                <CheckBox android:id="@+id/checkbox_bowl1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -135,8 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewbowl2">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -170,6 +177,10 @@
                     android:text="@+string/bowl2description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+                <CheckBox android:id="@+id/checkbox_bowl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -180,8 +191,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewbowl3">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -215,6 +225,10 @@
                     android:text="@+string/bowl3description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+                <CheckBox android:id="@+id/checkbox_bowl3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -226,8 +240,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewbowl4">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -261,6 +274,11 @@
                     android:text="@+string/bowl4description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+
+                <CheckBox android:id="@+id/checkbox_bowl4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -272,8 +290,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewbowl5">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -307,6 +324,10 @@
                     android:text="@+string/bowl5description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+                <CheckBox android:id="@+id/checkbox_bowl5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
@@ -331,10 +352,9 @@
         <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:cardUseCompatPadding="true"
+            android:background="?android:selectableItemBackground"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+
             android:id="@+id/cardviewsoup1">
         <LinearLayout
             android:layout_width="match_parent"
@@ -368,6 +388,10 @@
                 android:text="@+string/soup1description"
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
+            <CheckBox android:id="@+id/checkbox_soup1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onCheckboxClicked"/>
         </LinearLayout>
     </android.support.v7.widget.CardView>
         <View
@@ -377,10 +401,8 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:cardUseCompatPadding="true"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewsoup2">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -414,6 +436,10 @@
                     android:text="@+string/soup2description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+                <CheckBox android:id="@+id/checkbox_soup2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -423,10 +449,8 @@
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:cardUseCompatPadding="true"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewsoup3">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -460,6 +484,10 @@
                     android:text="@+string/soup3description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+                <CheckBox android:id="@+id/checkbox_soup3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <TextView
@@ -469,11 +497,8 @@
             android:background="#4f0e0d0e"
             android:textSize="30sp"
             android:gravity="center"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp" />
+            android:layout_height="wrap_content" />
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
@@ -483,8 +508,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewsalad1">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -518,6 +542,10 @@
                     android:text="@+string/salad1description"
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
+                <CheckBox android:id="@+id/checkbox_salad1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -542,8 +570,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewextras1">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -567,6 +594,10 @@
                     android:text="@+string/extraprice"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
+                <CheckBox android:id="@+id/checkbox_bread"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -580,7 +611,6 @@
             android:background="#4f0e0d0e"
             android:textSize="30sp"
             android:gravity="center"
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <View
@@ -591,8 +621,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:focusable="auto"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewdrink1">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -616,6 +646,10 @@
                     android:text="@+string/drink1price"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
+                <CheckBox android:id="@+id/checkbox_drink1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -626,8 +660,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:focusable="auto"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewdrink2">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -651,6 +685,10 @@
                     android:text="@+string/drink2price"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
+                <CheckBox android:id="@+id/checkbox_drink2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -661,8 +699,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:focusable="auto"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewdrink3">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -686,6 +724,10 @@
                     android:text="@+string/drink3price"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
+                <CheckBox android:id="@+id/checkbox_drink3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View
@@ -696,8 +738,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:cardElevation="4dp"
-            android:cardCornerRadius="5dp"
+            android:focusable="auto"
+            android:background="?android:selectableItemBackground"
             android:id="@+id/cardviewdrink4"
             >
             <LinearLayout
@@ -723,6 +765,10 @@
                     android:text="@+string/drink4price"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
+                <CheckBox android:id="@+id/checkbox_drink4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCheckboxClicked"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <View

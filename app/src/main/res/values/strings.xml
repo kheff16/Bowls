@@ -25,7 +25,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-<<<<<<< HEAD
+
     <string name="bowl">bowl</string>
     <string name="salad">salad</string>
     <string name="soup">soup</string>
@@ -49,7 +49,7 @@
     <string name="pickYourBowl">Pick Your Bowl</string>
     <string name="Sourdough">Sourdough</string>
     <string name="Wholewheat">Whole Wheat</string>
-    <string name="Salad">Salad</string>
+
 
     <string name="chooseSauce">Choose Your Sauce</string>
     <string name="sauce1">BBQ</string>
@@ -148,7 +148,7 @@
 
 
 
-    =======
+
     <string name="error_invalid_fullName">\"Invalid full name\"</string>
->>>>>>> 76b9307142ca283e103f6e49d511880c5a772194
+
 </resources>

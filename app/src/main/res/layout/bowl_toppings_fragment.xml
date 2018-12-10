@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -16,7 +15,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/normalbowlchooser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -24,17 +23,17 @@
                     android:text="@+string/pickYourBowl"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
-                <CheckBox android:id="@+id/checkbox_sauce1"
+                <CheckBox android:id="@+id/normalbowlsourdough"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Sourdough"
                     android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_sauce2"
+                <CheckBox android:id="@+id/normalbowlwholewheat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Wholewheat"
                     android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_sauce3"
+                <CheckBox android:id="@+id/normalbowlsalad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/Salad"
@@ -43,186 +42,6 @@
         </android.support.v7.widget.CardView>
 
 
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/choose_sauce"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#4f0e0d0e"
-                    android:gravity="center"
-                    android:text="@+string/chooseSauce"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp" />
-                <CheckBox android:id="@+id/checkbox_sauce1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sauce1"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_sauce2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sauce2"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_sauce3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sauce3"
-                    android:onClick="onCheckboxClicked"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:cardElevation="5dp"
-            android:cardUseCompatPadding="true">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/choose_meat"
-                    android:text="@+string/chooseMeat"
-                    android:textColor="@android:color/white"
-                    android:background="#4f0e0d0e"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <CheckBox android:id="@+id/checkbox_meat1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/meat1"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_meat2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/meat2"
-                    android:onClick="onCheckboxClicked"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/choose_vegetable"
-                    android:text="@+string/chooseVegetable"
-                    android:textColor="@android:color/white"
-                    android:background="#4f0e0d0e"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <CheckBox android:id="@+id/checkbox_vegetable1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/vegetable1"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_vegetable2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/vegetable2"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_vegetable3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/vegetable3"
-                    android:onClick="onCheckboxClicked"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/choose_cheese"
-                    android:text="@+string/chooseCheese"
-                    android:textColor="@android:color/white"
-                    android:background="#4f0e0d0e"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <CheckBox android:id="@+id/checkbox_cheese1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cheese1"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_cheese2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cheese2"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_cheese3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cheese3"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_cheese4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cheese4"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_cheese5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cheese5"
-                    android:onClick="onCheckboxClicked"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/choose_extras"
-                    android:text="@+string/chooseExtras"
-                    android:textColor="@android:color/white"
-                    android:background="#4f0e0d0e"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:layout_alignParentBottom="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-                <CheckBox android:id="@+id/checkbox_extras1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/extras1"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_extras2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/extras2"
-                    android:onClick="onCheckboxClicked"/>
-                <CheckBox android:id="@+id/checkbox_extras3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/extras3"
-                    android:onClick="onCheckboxClicked"/>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
