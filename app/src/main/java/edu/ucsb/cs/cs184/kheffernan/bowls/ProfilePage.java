@@ -27,14 +27,9 @@ public class ProfilePage extends AppCompatActivity {
 
 
     private BowlsUser user;
-    private TextView userInfoTextView;
-    private TextView nameHeader;
     private TextView nameValue;
-    private TextView emailHeader;
     private TextView emailValue;
-    private TextView userHeader;
     private TextView userValue;
-    private TextView typeHeader;
     private TextView typeValue;
     private BowlsFirebase bowlsFirebase;
     private BowlsFirebaseAuth bowlsFirebaseAuth;
@@ -50,16 +45,16 @@ public class ProfilePage extends AppCompatActivity {
         bowlsFirebase = new BowlsFirebase();
         bowlsFirebaseAuth = new BowlsFirebaseAuth();
 
-        nameHeader = (TextView) findViewById(R.id.nameHeader);
+//        nameHeader = (TextView) findViewById(R.id.nameHeader);
         nameValue = (TextView) findViewById(R.id.nameValue);
 
-        emailHeader = (TextView) findViewById(R.id.emailHeader);
+//        emailHeader = (TextView) findViewById(R.id.emailHeader);
         emailValue = (TextView) findViewById(R.id.emailValue);
 
-        userHeader = (TextView) findViewById(R.id.idHeader);
+//        userHeader = (TextView) findViewById(R.id.idHeader);
         userValue = (TextView) findViewById(R.id.idValue);
 
-        typeHeader = (TextView) findViewById(R.id.typeHeader);
+//        typeHeader = (TextView) findViewById(R.id.typeHeader);
         typeValue = (TextView) findViewById(R.id.typeValue);
 
 
