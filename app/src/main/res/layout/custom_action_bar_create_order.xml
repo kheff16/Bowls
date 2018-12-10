@@ -7,24 +7,8 @@
 
     <TableRow>
 
-        <ImageButton
-            android:id="@+id/action_bar_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_vertical"
-            android:background="@android:color/transparent"
-            android:clickable="true"
-            android:paddingLeft="25dp"
-            android:src="@android:drawable/ic_menu_add" />
 
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add to Cart" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,23 +22,7 @@
             android:textSize="36dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit Order" />
 
-        <ImageButton
-            android:id="@+id/action_bar_forward"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_vertical"
-            android:background="@android:color/transparent"
-            android:clickable="true"
-            android:paddingRight="25dp"
-            android:src="@android:drawable/ic_media_play" />
 
 
     </TableRow>

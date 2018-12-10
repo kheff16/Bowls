@@ -84,20 +84,11 @@ public class CreateOrderActivity extends AppCompatActivity {
             }
         });
 
-        addToCartBtn = (ImageButton) view.findViewById(R.id.action_bar_back);
 
-        addToCartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "clicked!",
-                        Toast.LENGTH_SHORT);
 
-                toast.show();
 
 //
-            }
-        });
+
 
     }
 
