@@ -72,7 +72,7 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
 
 
     private void updateUIFromDatabase(){
-        bowlsFirebase.getUsersOrders(currentUser.getUid(), new BowlsFirebaseCallback<ArrayList<Order>>() {
+        bowlsFirebase.getUsersOrdersWithStatus(currentUser.getUid(), ORDER_STATUS_COMPLETED, new BowlsFirebaseCallback<ArrayList<Order>>() {
             @Override
             public void callback(ArrayList<Order> data) {
                 if(data != null) {
@@ -84,7 +84,7 @@ public class PastOrdersFragment extends android.support.v4.app.Fragment  {
                             String[] allOrders = new String[usersOrders.size()];
 
                             for (int i=0; i < usersOrders.size(); i++)
-                                allOrders[i] = usersOrders.get(i).getItems();
+                                allOrders[i] = usersOrders.get(i).getOrderStatus()+": "+usersOrders.get(i).getItems();
                             ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                                     R.layout.activity_list_view, allOrders);
                             pastOrdersListView.setAdapter(adapter);
