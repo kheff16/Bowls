@@ -91,7 +91,8 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
                         public void run() {
                             String[] allOrders = new String[usersOrders.size()];
                             for (int i=0; i < usersOrders.size(); i++)
-                                allOrders[i] = usersOrders.get(i).getOrderStatus()+": "+usersOrders.get(i).getItems();
+                                allOrders[i] = usersOrders.get(i).getOrderStatus()+": "
+                                        +((usersOrders.get(i).getItems()).split("\\[")[1]).split("-")[0];
 
                             ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                                     R.layout.activity_list_view, allOrders);
