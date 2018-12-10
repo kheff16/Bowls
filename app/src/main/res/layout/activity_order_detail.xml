@@ -19,24 +19,26 @@
 
             <TextView
                 android:id="@+id/spot_detail_address"
-                android:layout_width="wrap_content"
+                android:layout_width="212dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="Order ID"
-                android:textStyle="bold" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/order_detail_orderID"
-                android:layout_width="83dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="order_id" />
+                android:text="order_id"
+                android:textSize="18sp" />
 
 
 
@@ -49,14 +51,15 @@
 
             <TextView
                 android:id="@+id/order_detail_owner"
-                android:layout_width="wrap_content"
+                android:layout_width="211dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="Customer ID"
-                android:textStyle="bold" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/order_detail_customerID"
@@ -65,7 +68,74 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp" />
+                android:layout_marginBottom="20dp"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Cost"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/order_detail_cost"
+                android:layout_width="83dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:paddingRight="15dp"
+                android:text="order cost"
+                android:textAlignment="textEnd"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/time_since_arrival"
+                android:layout_width="288dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:text="Time Since Arrival"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/time_since_arrival_text"
+                android:layout_width="83dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"
+                android:paddingRight="15dp"
+                android:text="5 min"
+                android:textAlignment="textEnd"
+                android:textSize="30sp" />
+
         </LinearLayout>
 
         <RelativeLayout
@@ -77,22 +147,27 @@
 
             <TextView
                 android:id="@+id/order_detail_items"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
                 android:layout_gravity="center"
+                android:layout_marginStart="0dp"
                 android:adjustViewBounds="true"
-                android:maxWidth="300dp"
-                android:maxHeight="200dp"
-                android:minWidth="300dp"
-                android:minHeight="200dp"
+                android:background="@color/grey_500"
+                android:maxWidth="700dp"
+                android:maxHeight="400dp"
+                android:minWidth="500dp"
+                android:minHeight="300dp"
                 android:scaleType="centerInside"
-                android:text="Items Listed Here" />
+                android:text="Items Listed Here"
+                android:textAlignment="viewStart"
+                android:textSize="24sp" />
 
 
         </RelativeLayout>
 
         <Button
-            android:id="@+id/move_to_next_stage_btn"
+            android:id="@+id/contact_customer_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -101,10 +176,11 @@
             android:text="Contact Customer" />
 
         <Button
-            android:id="@+id/contact_customer_btn"
+            android:id="@+id/move_to_next_stage_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Move to Next Stage" />
+            android:text="Move order to next stage"
+            android:textSize="18sp" />
 
     </LinearLayout>
 </ScrollView>

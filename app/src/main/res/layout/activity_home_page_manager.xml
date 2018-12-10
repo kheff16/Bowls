@@ -1,46 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_500">
 
     <Button
         android:id="@+id/in_progress_btn"
-        android:layout_width="166dp"
-        android:layout_height="160dp"
+        android:layout_width="251dp"
+        android:layout_height="303dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="41dp"
-        android:layout_marginEnd="17dp"
-        android:text="In Progress" />
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="26dp"
+        android:layout_toEndOf="@+id/waiting_to_start_btn"
+        android:background="@color/grey_300"
+        android:text="In Progress"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/waiting_to_start_btn"
-        android:layout_width="162dp"
-        android:layout_height="157dp"
-        android:layout_alignStart="@+id/ready_for_pickup_btn"
+        android:layout_width="251dp"
+        android:layout_height="303dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="46dp"
-        android:text="Waiting to Start" />
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="55dp"
+        android:background="@color/cardview_light_background"
+        android:backgroundTint="@color/grey_300"
+        android:text="Waiting to Start"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/completed_btn"
-        android:layout_width="167dp"
-        android:layout_height="154dp"
+        android:layout_width="251dp"
+        android:layout_height="303dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="226dp"
-        android:layout_marginEnd="17dp"
-        android:text="Completed" />
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="374dp"
+        android:layout_toEndOf="@+id/ready_for_pickup_btn"
+        android:background="@color/grey_300"
+        android:text="Completed"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/ready_for_pickup_btn"
-        android:layout_width="165dp"
-        android:layout_height="161dp"
+        android:layout_width="251dp"
+        android:layout_height="303dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="222dp"
-        android:text="Ready for Pickup" />
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="374dp"
+        android:backgroundTint="@color/grey_300"
+        android:text="Ready for Pickup"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/refresh_btn"
@@ -48,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="110dp"
         android:layout_marginBottom="57dp"
         android:text="Refresh" />
 
@@ -58,6 +80,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/refresh_btn"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="47dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="108dp"
         android:text="Log Off" />
 </RelativeLayout>
