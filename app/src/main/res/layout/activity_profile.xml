@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_weight="1"
-        android:fontFamily="casual"
         android:text="Name:"
+        android:fontFamily="casual"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@id/nameValue"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -25,33 +25,51 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView"
+        android:fontFamily="casual"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameHeader" />
+        app:layout_constraintTop_toBottomOf="@id/nameHeader"
+        app:layout_constraintBottom_toTopOf="@id/emailHeader"/>
 
     <TextView
         android:id="@+id/emailHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="228dp" />
+        android:text="Email:"
+        android:fontFamily="casual"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameValue"
+        app:layout_constraintBottom_toTopOf="@id/emailValue"/>
 
     <TextView
         android:id="@+id/emailValue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="228dp" />
+        android:text="this is an email"
+        android:fontFamily="casual"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailHeader"
+        app:layout_constraintBottom_toTopOf="@id/idHeader"/>
 
     <TextView
         android:id="@+id/idHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="228dp" />
+        android:text="Unique User ID: "
+        android:fontFamily="casual"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/emailValue"
+        app:layout_constraintBottom_toTopOf="@id/idValue"/>
 
     <TextView
         android:id="@+id/idValue"
@@ -59,7 +77,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView"
-        tools:layout_editor_absoluteX="228dp" />
+        android:fontFamily="casual"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idHeader"
+        app:layout_constraintBottom_toTopOf="@id/typeHeader"/>
 
     <TextView
         android:id="@+id/typeHeader"
@@ -67,7 +90,12 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Account Type: "
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:fontFamily="casual"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idValue"
+        app:layout_constraintBottom_toTopOf="@id/typeValue" />
 
     <TextView
         android:id="@+id/typeValue"
@@ -75,16 +103,20 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@id/typeHeader"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:fontFamily="casual"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/typeHeader"
+        app:layout_constraintBottom_toTopOf="@id/edit_profile_btn" />
 
-    <TextView
-        android:id="@+id/profile_info_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Profile info goes here"
-        tools:layout_editor_absoluteX="228dp" />
+    <!--<TextView-->
+        <!--android:id="@+id/profile_info_text"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_weight="1"-->
+        <!--android:text="Profile info goes here"-->
+        <!--tools:layout_editor_absoluteX="228dp" />-->
 
     <Button
         android:id="@+id/edit_profile_btn"
@@ -95,7 +127,18 @@
         android:layout_weight="1"
         android:text="Edit Profile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/typeValue" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_profile_btn"
+        app:srcCompat="@drawable/profilebowl" />
 
 </android.support.constraint.ConstraintLayout>

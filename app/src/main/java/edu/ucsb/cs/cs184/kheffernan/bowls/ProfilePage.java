@@ -28,6 +28,14 @@ public class ProfilePage extends AppCompatActivity {
 
     private BowlsUser user;
     private TextView userInfoTextView;
+    private TextView nameHeader;
+    private TextView nameValue;
+    private TextView emailHeader;
+    private TextView emailValue;
+    private TextView userHeader;
+    private TextView userValue;
+    private TextView typeHeader;
+    private TextView typeValue;
     private BowlsFirebase bowlsFirebase;
     private BowlsFirebaseAuth bowlsFirebaseAuth;
     private Button editProfileBtn;
@@ -42,7 +50,21 @@ public class ProfilePage extends AppCompatActivity {
         bowlsFirebase = new BowlsFirebase();
         bowlsFirebaseAuth = new BowlsFirebaseAuth();
 
-        userInfoTextView = (TextView) findViewById(R.id.profile_info_text);
+        nameHeader = (TextView) findViewById(R.id.nameHeader);
+        nameValue = (TextView) findViewById(R.id.nameValue);
+
+        emailHeader = (TextView) findViewById(R.id.emailHeader);
+        emailValue = (TextView) findViewById(R.id.emailValue);
+
+        userHeader = (TextView) findViewById(R.id.idHeader);
+        userValue = (TextView) findViewById(R.id.idValue);
+
+        typeHeader = (TextView) findViewById(R.id.typeHeader);
+        typeValue = (TextView) findViewById(R.id.typeValue);
+
+
+
+        //userInfoTextView = (TextView) findViewById(R.id.profile_info_text);
         editProfileBtn = (Button) findViewById(R.id.edit_profile_btn);
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,9 +95,10 @@ public class ProfilePage extends AppCompatActivity {
                         mainHandler.post(new Runnable() {
                             @Override
                             public void run() {
-                                userInfoTextView.setText("My user info:\nfull name = "+user.getFullname()+"\nemail = "+user.getEmail()
-                                +"\nuserID = "+user.getUserID()
-                                +"\nacctType ="+ user.getAccountType());
+                                nameValue.setText("\t\t\t" + user.getFullname() + '\n');
+                                emailValue.setText("\t\t\t" + user.getEmail()+ '\n');
+                                userValue.setText("\t\t\t" + user.getUserID()+ '\n');
+                                typeValue.setText("\t\t\t" + user.getAccountType()+ '\n');
                             }
 
 
