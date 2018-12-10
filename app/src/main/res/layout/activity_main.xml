@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="129dp"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="@font/mrs_sheppards"
         android:text="Welcome to Buddha Bowls Mobile!"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -53,7 +53,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="293dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/mrs_sheppards"
         android:text="Log in or register with email to begin"
         android:textSize="24sp" />
 
