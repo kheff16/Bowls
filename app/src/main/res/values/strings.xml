@@ -31,7 +31,7 @@
     <string name="soup">soup</string>
     <string name="bread">bread</string>
     <string name="drink">drink</string>
-    <string name="checkout">cart</string>
+    <string name="checkout">Checkout</string>
     <string name="chooseItem">Choose An Item</string>
     <string name="store_name">Buddha Bowls</string>
 
@@ -129,7 +129,20 @@
     <string name="Custombowlprice">8.50+</string>
     <string name="Custombowldescription">Create Your Own Bread Bowl</string>
 
+    <string name="extra">Bread </string>
+    <string name="extraprice">1.00</string>
 
+    <string name="drink1">Water </string>
+    <string name="drink1price">1.00</string>
+
+    <string name="drink2">Sprite </string>
+    <string name="drink2price">1.50</string>
+
+    <string name="drink3">Coke </string>
+    <string name="drink3price">1.50</string>
+
+    <string name="drink4">Lemonade </string>
+    <string name="drink4price">1.50</string>
 
 
 

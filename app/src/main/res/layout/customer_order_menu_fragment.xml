@@ -2,13 +2,15 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
-            android:id="@+id/choose_sauce"
+            android:id="@+id/choose_custom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#4f0e0d0e"
@@ -16,75 +18,35 @@
             android:text="@+string/BuildYourOwn"
             android:textColor="@android:color/white"
             android:textSize="30dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:cardElevation="4dp"
-            android:clickable="true">
-        <LinearLayout
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewcustombowl" >
+
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                android:id="@+id/choose_sauce"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#4f0e0d0e"
-                android:gravity="center"
-                android:text="@+string/CustomBowlsAndSalad"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
-            <TextView
-                android:id="@+id/choose_sauce"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#4f0e0d0e"
-                android:gravity="center"
-                android:text="@+string/Custombowlprice"
-                android:textColor="@android:color/white"
-                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/choose_sauce"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#4f0e0d0e"
-                android:gravity="center"
-                android:text="@+string/Custombowldescription"
-                android:textColor="@android:color/white"
-                android:textSize="15sp" />
-        </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <TextView
-            android:id="@+id/choose_sauce"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#4f0e0d0e"
-            android:gravity="center|left"
-            android:text="@+string/Bowls"
-            android:textColor="@android:color/white"
-            android:textSize="30dp" />
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:cardElevation="4dp"
-            android:clickable="true"
-            android:layout_marginBottom="20dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/custombowltext"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
                     android:gravity="center"
-                    android:text="@+string/Custombowl"
+                    android:text="@+string/CustomBowlsAndSalad"
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/custombowlprice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -94,7 +56,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/custombowldescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -103,17 +65,40 @@
                     android:textColor="@android:color/white"
                     android:textSize="15sp" />
             </LinearLayout>
+
         </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+        <TextView
+            android:id="@+id/choose_bowls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#4f0e0d0e"
+            android:gravity="center|left"
+            android:text="@+string/Bowls"
+            android:textColor="@android:color/white"
+            android:textSize="30dp"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewbowl1">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl1text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -122,7 +107,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl1price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -131,7 +116,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl1description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -142,16 +127,23 @@
 
             </LinearLayout>
         </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewbowl2">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl2text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -160,7 +152,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl2price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -170,7 +162,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl2description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -180,16 +172,23 @@
                     android:textSize="15sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewbowl3">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl3text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -198,7 +197,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl3price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -208,7 +207,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl3description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -218,16 +217,24 @@
                     android:textSize="15sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"
+            />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewbowl4">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl4text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -236,7 +243,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl4price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -246,7 +253,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl4description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -256,16 +263,24 @@
                     android:textSize="15sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/cardviewbowl5"/>
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewbowl5">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl5text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -274,7 +289,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl5price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -284,7 +299,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/bowl5description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -295,10 +310,13 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
 
         <TextView
-            android:id="@+id/choose_meat"
+            android:id="@+id/choose_soup"
             android:text="@+string/Soup"
             android:textColor="@android:color/white"
             android:background="#4f0e0d0e"
@@ -306,17 +324,24 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:cardUseCompatPadding="true"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewsoup1">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/choose_sauce"
+                android:id="@+id/soup1text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#4f0e0d0e"
@@ -325,7 +350,7 @@
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
             <TextView
-                android:id="@+id/choose_sauce"
+                android:id="@+id/soup1price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#4f0e0d0e"
@@ -335,7 +360,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/choose_sauce"
+                android:id="@+id/soup1description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#4f0e0d0e"
@@ -345,19 +370,24 @@
                 android:textSize="20sp" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:cardElevation="5dp"
             android:cardUseCompatPadding="true"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewsoup2">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/soup2text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -366,7 +396,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/soup2price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -376,7 +406,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/soup2description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -386,18 +416,24 @@
                     android:textSize="15sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:cardElevation="5dp"
             android:cardUseCompatPadding="true"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewsoup3">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/soup3text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -406,7 +442,7 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/soup3price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -416,7 +452,7 @@
                     android:textSize="20sp" />
 
                 <TextView
-                    android:id="@+id/choose_sauce"
+                    android:id="@+id/soup3description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#4f0e0d0e"
@@ -435,23 +471,61 @@
             android:gravity="center"
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewsalad1">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+                <TextView
+                    android:id="@+id/salad1description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/salad1"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/salad1price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/salad1price"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
 
+                <TextView
+                    android:id="@+id/salad1description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/salad1description"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
-
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <TextView
-            android:id="@+id/choose_cheese"
+            android:id="@+id/choose_Extras"
             android:text="@+string/Extras"
             android:textColor="@android:color/white"
             android:background="#4f0e0d0e"
@@ -460,19 +534,47 @@
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewextras1">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
+                <TextView
+                    android:id="@+id/breadtext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/extra"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/breadprice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/extraprice"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <TextView
-            android:id="@+id/choose_extras"
+            android:id="@+id/drinkstext"
             android:text="@+string/Drinks"
             android:textColor="@android:color/white"
             android:background="#4f0e0d0e"
@@ -481,37 +583,179 @@
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true">
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewdrink1">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clickable="true">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <Button
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/drink1text"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:onClick="submitButtonClicked"
-                    android:text="@string/AddToCart" />
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink1"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/drink1price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink1price"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
             </LinearLayout>
         </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewdrink2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/drink2text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink2"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/drink2price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink2price"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewdrink3">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/drink3text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink3"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/drink3price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink3price"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:cardElevation="4dp"
+            android:cardCornerRadius="5dp"
+            android:id="@+id/cardviewdrink4"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/drink4text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink4"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/drink4price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#4f0e0d0e"
+                    android:gravity="center"
+                    android:text="@+string/drink4price"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:onClick="submitButtonClicked"
+                android:layout_marginLeft="10dp"
+                android:text="@string/AddToCart"
+                android:id="@+id/addtocart"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:onClick="submitButtonClicked"
+                android:layout_marginRight="10dp"
+                android:text="@string/checkout"
+                android:id="@+id/checkout"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
     </LinearLayout>
 
 </ScrollView>

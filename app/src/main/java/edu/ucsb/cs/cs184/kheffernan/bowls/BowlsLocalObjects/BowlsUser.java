@@ -1,6 +1,7 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects;
 
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,6 +13,11 @@ public class BowlsUser {
         private String fullname;
         private String phoneNumber;
         private String accountType;
+
+        private ArrayList<String> items;
+        private ArrayList<Double> prices;
+
+
         private Map<String, String> currentOrders = new HashMap<>();
 
 
