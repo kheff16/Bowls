@@ -204,28 +204,56 @@ public class BowlsFirebase {
         });
     }
 
-    public void getUsersCompletedOrders(final String userID,
+    public void getUsersOrdersWithStatus(final String userID, final String status,
                                @NonNull final BowlsFirebaseCallback<ArrayList<Order>> finishedCalback) {
 
         DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                ArrayList<Order> completedOrders = new ArrayList<>();
+                ArrayList<Order> orders = new ArrayList<>();
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Order order = postSnapshot.getValue(Order.class);
 
                     if (order != null) {
                         order.setOrderID(postSnapshot.getKey());
-                        if (order.getOrderStatus() == ORDER_STATUS_COMPLETED) {
-                            completedOrders.add(order);
-
+                        if (order.getOrderStatus().equals(status)) {
+                            orders.add(order);
                         }
                     }
 
                 }
 
-                finishedCalback.callback(completedOrders);
+                finishedCalback.callback(orders);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+
+        });
+    }
+
+    public void getUsersCurrentOrders(final String userID,
+                                         @NonNull final BowlsFirebaseCallback<ArrayList<Order>> finishedCalback) {
+
+        DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<Order> orders = new ArrayList<>();
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    Order order = postSnapshot.getValue(Order.class);
+
+                    if (order != null) {
+                        order.setOrderID(postSnapshot.getKey());
+                        if (!order.getOrderStatus().equals(ORDER_STATUS_COMPLETED)) {
+                            orders.add(order);
+                        }
+                    }
+
+                }
+
+                finishedCalback.callback(orders);
             }
 
             @Override
