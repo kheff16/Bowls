@@ -61,7 +61,7 @@ public class EditProfile extends AppCompatActivity {
 
                             editName.setHint(user.getFullname());
 
-                            if (user.getAccountType()==ACCOUNT_TYPE_BUSINESS){
+                            if (user.getAccountType().equals(ACCOUNT_TYPE_BUSINESS)){
                                 editAcctTypeSwitch.setChecked(true);
                             }
                             else {editAcctTypeSwitch.setChecked(false);}
