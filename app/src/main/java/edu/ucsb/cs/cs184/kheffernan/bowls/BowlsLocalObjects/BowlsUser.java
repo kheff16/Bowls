@@ -12,7 +12,7 @@ public class BowlsUser {
         private String fullname;
         private String phoneNumber;
         private String accountType;
-        private Map<String, String> currentOrders = new HashMap<>();
+        private Map<String, String> currentOrdersCart = new HashMap<>();
 
 
         public BowlsUser() {
@@ -25,14 +25,16 @@ public class BowlsUser {
             this.fullname = fullname;
             this.accountType = accountType;
             this.phoneNumber = phoneNumber;
+            currentOrdersCart.put("item","cost");
+            this.currentOrdersCart = currentOrdersCart;
         }
 
-        public void addOrderToUser( String orderID) {
-            currentOrders.put(orderID, userID);
+        public void addOrderItemToUser( String orderID) {
+            currentOrdersCart.put(orderID, userID);
         }
 
-        public void removeOrderFromUser(String orderID) {
-            currentOrders.remove(orderID);
+        public void removeOrderItemFromUser(String orderID) {
+            currentOrdersCart.remove(orderID);
         }
 
         public String getUserID() {
@@ -52,7 +54,7 @@ public class BowlsUser {
         public String getPhoneNumber() {return this.phoneNumber;}
 
 
-        public Map<String, String> getCurrentOrder() { return this.currentOrders; }
+        public Map<String, String> getCurrentOrdersCart() { return this.currentOrdersCart; }
 
         public void setUserID(String userID) { this.userID = userID; }
 
@@ -64,7 +66,7 @@ public class BowlsUser {
 
         public void setPhoneNumber(String phoneNumber) {this.phoneNumber = phoneNumber;}
 
-        public void setCurrentOrders(Map<String, String> currentOrders) { this.currentOrders = currentOrders; }
+        public void setCurrentOrdersCart(Map<String, String> currentOrders) { this.currentOrdersCart = currentOrders; }
 }
 
 
