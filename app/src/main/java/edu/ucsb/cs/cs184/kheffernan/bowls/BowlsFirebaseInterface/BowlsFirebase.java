@@ -208,7 +208,9 @@ public class BowlsFirebase {
                                @NonNull final BowlsFirebaseCallback<ArrayList<Order>> finishedCalback) {
 
         DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        Query query = myRef.orderByChild("ownerID").equalTo(userID);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<Order> orders = new ArrayList<>();
@@ -237,7 +239,9 @@ public class BowlsFirebase {
                                          @NonNull final BowlsFirebaseCallback<ArrayList<Order>> finishedCalback) {
 
         DatabaseReference myRef = bowlsDatabase.child(ORDER_PATH);
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        Query query = myRef.orderByChild("ownerID").equalTo(userID);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<Order> orders = new ArrayList<>();

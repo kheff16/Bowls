@@ -104,7 +104,6 @@ public class SubmitOrderActivity extends AppCompatActivity {
                             emptyCart.put("No items","$0.00");
                             bowlsUser.setCurrentOrdersCart(emptyCart);
                             bowlsFirebase.uploadUser(bowlsUser);
-                            showCartClearedDialog();
 
                         }
 

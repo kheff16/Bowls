@@ -1,7 +1,9 @@
 package edu.ucsb.cs.cs184.kheffernan.bowls.ManagerDashboardActivities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -80,6 +82,7 @@ public class OrderDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onMoveNextBtnClicked();
+                showMovedStatusDialog();
             }
         });
 
@@ -122,6 +125,19 @@ public class OrderDetailActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void showMovedStatusDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Order Moved")
+                .setMessage(("This order has been moved to the next stage of building."))
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //go to homepage
+                        finish();
+                    }
+                })
+                .show();
     }
 
 
