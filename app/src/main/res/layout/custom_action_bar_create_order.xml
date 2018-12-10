@@ -15,6 +15,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_vertical"
             android:background="@android:color/transparent"
+            android:clickable="true"
             android:paddingLeft="25dp"
             android:src="@android:drawable/ic_menu_add" />
 
@@ -51,6 +52,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_vertical"
             android:background="@android:color/transparent"
+            android:clickable="true"
             android:paddingRight="25dp"
             android:src="@android:drawable/ic_media_play" />
 

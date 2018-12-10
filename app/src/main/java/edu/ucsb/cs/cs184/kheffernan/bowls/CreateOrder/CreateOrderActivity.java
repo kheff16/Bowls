@@ -12,6 +12,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -46,7 +47,10 @@ public class CreateOrderActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_action_bar_create_order);
 
+
         View view =getSupportActionBar().getCustomView();
+
+        ImageButton addToCartBtn;
 
 
         TabLayout tabLayout = findViewById(R.id.menu_items_tab_layout);
@@ -79,6 +83,22 @@ public class CreateOrderActivity extends AppCompatActivity {
 
             }
         });
+
+        addToCartBtn = (ImageButton) view.findViewById(R.id.action_bar_back);
+
+        addToCartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "clicked!",
+                        Toast.LENGTH_SHORT);
+
+                toast.show();
+
+//
+            }
+        });
+
     }
 
 

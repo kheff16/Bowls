@@ -25,16 +25,14 @@ public class BowlsUser {
             this.fullname = fullname;
             this.accountType = accountType;
             this.phoneNumber = phoneNumber;
-            currentOrdersCart.put("item","cost");
-            this.currentOrdersCart = currentOrdersCart;
         }
 
-        public void addOrderItemToUser( String orderID) {
-            currentOrdersCart.put(orderID, userID);
+        public void addOrderItemToUser( String item, String cost) {
+            currentOrdersCart.put(item, cost);
         }
 
-        public void removeOrderItemFromUser(String orderID) {
-            currentOrdersCart.remove(orderID);
+        public void removeOrderItemFromUser(String item) {
+            currentOrdersCart.remove(item);
         }
 
         public String getUserID() {

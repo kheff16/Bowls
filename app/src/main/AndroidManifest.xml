@@ -48,6 +48,8 @@
             android:label="Order Status"/>
         <activity android:name=".ManagerDashboardActivities.OrderDetailActivity"
             android:label="Order Details"/>
+        <activity android:name=".CreateOrder.SubmitOrderActivity"
+            android:label="Submit Order"/>
 
 
     </application>
