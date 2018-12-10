@@ -23,12 +23,11 @@ import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebase;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseAuth;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsFirebaseInterface.BowlsFirebaseCallback;
 import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.BowlsUser;
-import edu.ucsb.cs.cs184.kheffernan.bowls.BowlsLocalObjects.Order;
+import edu.ucsb.cs.cs184.kheffernan.bowls.CreateOrder.CreateOrderActivity;
 import edu.ucsb.cs.cs184.kheffernan.bowls.ManagerDashboardActivities.ManagerOrderView;
 import edu.ucsb.cs.cs184.kheffernan.bowls.ViewOrders.MyOrders;
 
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ACCOUNT_TYPE_BUSINESS;
-import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ACCOUNT_TYPE_CUSTOMER;
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_COMPLETED;
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_CREATED;
 import static edu.ucsb.cs.cs184.kheffernan.bowls.Utilities.BowlsConstants.ORDER_STATUS_IN_PROGRESS;

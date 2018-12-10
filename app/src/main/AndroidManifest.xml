@@ -39,8 +39,9 @@
             android:label="Profile" />
         <activity android:name=".EditProfile"
             android:label="Edit Profile"/>
-        <activity android:name=".CreateOrderActivity"
-            android:label="Create an Order"/>
+        <activity android:name=".CreateOrder.CreateOrderActivity"
+            android:label="Create an Order"
+            android:theme="@style/CustomTheme"/>
         <activity android:name=".ViewOrders.MyOrders"
             android:label="My Orders"/>
         <activity android:name=".ManagerDashboardActivities.ManagerOrderView"
