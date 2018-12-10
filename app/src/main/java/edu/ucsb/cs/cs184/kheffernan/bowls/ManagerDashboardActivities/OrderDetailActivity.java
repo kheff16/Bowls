@@ -31,6 +31,8 @@ public class OrderDetailActivity extends AppCompatActivity {
     private TextView items;
     private TextView orderIDTextView;
     private TextView customerID;
+    private TextView costTextView;
+
 
     //Order values
     private String ownerID;
@@ -50,6 +52,8 @@ public class OrderDetailActivity extends AppCompatActivity {
         items = (TextView) findViewById(R.id.order_detail_items);
         customerID = (TextView) findViewById(R.id.order_detail_customerID);
         orderIDTextView = (TextView) findViewById(R.id.order_detail_orderID);
+        costTextView = (TextView) findViewById(R.id.order_detail_cost);
+
 
         // Get intent and extras
         Intent intent = getIntent();
@@ -64,6 +68,7 @@ public class OrderDetailActivity extends AppCompatActivity {
                     items.setText(data.getItems());
                     customerID.setText(data.getOwnerID());
                     orderIDTextView.setText(data.getOrderID());
+                    costTextView.setText("$"+data.getOrderCost().toString());
 
 
                 }
