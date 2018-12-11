@@ -100,15 +100,15 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
                                     String yours = mine[j].split("-")[0];
 
                                     if(yours.charAt(0) == '['){
-                                        allOrders[i] += yours.substring(1,yours.length());
+                                        allOrders[i] += yours.substring(1,yours.length() - 1);
                                     }
                                     else if (yours.charAt(yours.length()-1) == ']'){
                                         allOrders[i] += ", ";
-                                        allOrders[i] += yours.substring(0,yours.length()-1);
+                                        allOrders[i] += yours.substring(0,yours.length()- 2);
                                     }
                                     else{
                                         allOrders[i] += ", ";
-                                        allOrders[i] += yours;
+                                        allOrders[i] += yours.substring(0, yours.length()-1);
                                     }
                                 }
                             }
