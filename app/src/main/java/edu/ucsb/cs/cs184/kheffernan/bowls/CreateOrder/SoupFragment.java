@@ -37,7 +37,7 @@ public class SoupFragment extends Fragment {
 
     private ArrayList<Order> Orders;
     public ArrayList<Long> selected;
-    String[] allCustomBowls = new String[6];
+    String[] allCustomBowls = new String[11];
 
 
 
@@ -65,12 +65,17 @@ public class SoupFragment extends Fragment {
 
 
 
-        allCustomBowls[0]="Tomato Basil - $4.99";
-        allCustomBowls[1] = "New England Clam Chowder - $4.99";
-        allCustomBowls[2] = "Chili - $4.99";
-        allCustomBowls[3] = "Put my soup in a bread bowl - $0.00";
-        allCustomBowls[4] = "Add Items to Cart";
-        allCustomBowls[5] = "Submit My Order";
+        allCustomBowls[0]= "Small Tomato Basil - $4.50";
+        allCustomBowls[1]= "Large Tomato Basil - $6.00";
+        allCustomBowls[2] = "Small New England Clam Chowder - $4.50";
+        allCustomBowls[3] = "Large New England Clam Chowder - $6.00";
+        allCustomBowls[4] = "Small Chili - $4.50";
+        allCustomBowls[5] = "Large Chili - $6.00";
+        allCustomBowls[6] = "Small Mac - $4.50";
+        allCustomBowls[7] = "Large Mac - $6.00";
+        allCustomBowls[8] = "Put my soup in a bread bowl - $0.00";
+        allCustomBowls[9] = "Add Items to Cart";
+        allCustomBowls[10] = "Submit My Order";
 
 //        bowlsFirebase = new BowlsFirebase();
         refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshSoup);

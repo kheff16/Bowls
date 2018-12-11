@@ -65,10 +65,10 @@ public class BowlsSaladsFragment extends Fragment {
 
 
 
-        allCustomBowls[0]="Hawaiian BBQ Bowl - $8.99";
-        allCustomBowls[1] = "Mediterannean Bowl - $7.99";
-        allCustomBowls[2] = "Pizza Bowl - $7.99";
-        allCustomBowls[3] = "Hangover Bowl - $10.99";
+        allCustomBowls[0]="Hawaiian BBQ Bowl - $10.50";
+        allCustomBowls[1] = "Mediterannean Bowl - $9.50";
+        allCustomBowls[2] = "Pizza Bowl - $8.50";
+        allCustomBowls[3] = "Hangover Bowl - $11";
         allCustomBowls[4] = "Add Items to Cart";
         allCustomBowls[5] = "Submit My Order";
 

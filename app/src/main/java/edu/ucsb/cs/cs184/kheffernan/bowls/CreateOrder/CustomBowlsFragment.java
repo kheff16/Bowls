@@ -72,8 +72,8 @@ public class CustomBowlsFragment extends Fragment {
 
 
 
-        allCustomBowls[0]="Custom Bread Bowl - $8.99";
-        allCustomBowls[1] = "Custom Salad Bowl - $7.99";
+        allCustomBowls[0]="Custom Bread Bowl - $8.50";
+        allCustomBowls[1] = "Custom Salad Bowl - $8.25";
         allCustomBowls[2] = "Add Items to Cart";
         allCustomBowls[3] = "Submit My Order";
 

@@ -44,7 +44,7 @@ public class DrinksExtrasFragment extends Fragment {
 
     private ArrayList<Order> Orders;
     public ArrayList<Long> selected;
-    String[] allCustomBowls = new String[13];
+    String[] allCustomBowls = new String[12];
 
 
 
@@ -72,19 +72,18 @@ public class DrinksExtrasFragment extends Fragment {
 
 
 
-        allCustomBowls[0]="Sprite - $1.99";
-        allCustomBowls[1]="Coke - $1.99";
-        allCustomBowls[2]="Lemonade - $1.99";
-        allCustomBowls[3]="Water - $0.99";
-        allCustomBowls[4] ="BBQ Sauce - $0.75";
-        allCustomBowls[5] ="Pesto Sauce - $0.75";
-        allCustomBowls[6] ="Marinara Sauce - $0.75";
-        allCustomBowls[7] ="Homemade Hummus - $0.75";
-        allCustomBowls[8] ="Avocado - $1.50";
-        allCustomBowls[9] ="Egg - $2.99";
-        allCustomBowls[10] ="Bacon - $0.99";
-        allCustomBowls[11] = "Add Items to Cart";
-        allCustomBowls[12] = "Submit My Order";
+        allCustomBowls[0]="Small Drink - $2.50";
+        allCustomBowls[1]="Large Drink - $3.00";
+        allCustomBowls[2]="Water - $0";
+        allCustomBowls[3] ="BBQ Sauce - $0.25";
+        allCustomBowls[4] ="Pesto Sauce - $0.25";
+        allCustomBowls[5] ="Marinara Sauce - $0.25";
+        allCustomBowls[6] ="Homemade Hummus - $0.25";
+        allCustomBowls[7] ="Avocado - $1.00";
+        allCustomBowls[8] ="Egg - $0.50";
+        allCustomBowls[9] ="Bacon - $0.50";
+        allCustomBowls[10] = "Add Items to Cart";
+        allCustomBowls[11] = "Submit My Order";
 
 //        bowlsFirebase = new BowlsFirebase();
         refreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeRefreshDrinksExtras);

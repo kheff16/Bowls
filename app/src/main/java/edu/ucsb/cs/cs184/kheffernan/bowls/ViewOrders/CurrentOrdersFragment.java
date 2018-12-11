@@ -84,15 +84,34 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
                 if(data != null) {
                     usersOrders = data;
 
-
                     final Handler mainHandler = new Handler(Looper.getMainLooper());
                     mainHandler.post(new Runnable() {
                         @Override
                         public void run() {
                             String[] allOrders = new String[usersOrders.size()];
                             for (int i=0; i < usersOrders.size(); i++)
-                                allOrders[i] = usersOrders.get(i).getOrderStatus()+": "
-                                        +((usersOrders.get(i).getItems()).split("\\[")[1]).split("-")[0];
+                            {
+                                String[] mine;
+                                mine = (usersOrders.get(i).getItems()).split(",");
+                                allOrders[i] = usersOrders.get(i).getOrderStatus()+": ";
+
+
+                                for(int j=0; j < mine.length; j++){
+                                    String yours = mine[j].split("-")[0];
+
+                                    if(yours.charAt(0) == '['){
+                                        allOrders[i] += yours.substring(1,yours.length());
+                                    }
+                                    else if (yours.charAt(yours.length()-1) == ']'){
+                                        allOrders[i] += ", ";
+                                        allOrders[i] += yours.substring(0,yours.length()-1);
+                                    }
+                                    else{
+                                        allOrders[i] += ", ";
+                                        allOrders[i] += yours;
+                                    }
+                                }
+                            }
 
                             ArrayAdapter adapter = new ArrayAdapter<>(getActivity(),
                                     R.layout.activity_list_view, allOrders);
