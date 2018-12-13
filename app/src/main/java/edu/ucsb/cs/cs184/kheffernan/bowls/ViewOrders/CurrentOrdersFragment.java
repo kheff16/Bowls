@@ -105,6 +105,7 @@ public class CurrentOrdersFragment extends android.support.v4.app.Fragment  {
                                     else if (yours.charAt(yours.length()-1) == ']'){
                                         allOrders[i] += ", ";
                                         allOrders[i] += yours.substring(0,yours.length()- 2);
+                                        allOrders[i] += ".";
                                     }
                                     else{
                                         allOrders[i] += ", ";

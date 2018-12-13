@@ -85,12 +85,7 @@ public class SubmitOrderActivity extends AppCompatActivity {
                         cost+=price;
                     }
                     costText.setText(cost.toString().substring(0,cost.toString().indexOf(".")+2));
-                    String a = cost.toString().substring((cost.toString().indexOf(".")+2), (cost.toString().indexOf(".")+3));
-                    costText.append((cost.toString().indexOf(".")+2 == '0')? a : "0" );
 
-                    Toast toast = new Toast(getApplicationContext());
-                    toast.makeText(getApplication(),cost.toString().indexOf(".")+2, Toast.LENGTH_LONG);
-                    toast.show();
 
                     textView = (TextView) findViewById(R.id.submit_order_text_view);
                     textView.setTextSize(24);
